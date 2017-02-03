@@ -19,8 +19,8 @@ npm install react-touch-screen-keyboard
 ```js
 
 import React from 'react';
-import KeyboardedInput from 'react-screen-keyboard';
-import 'react-screen-keyboard/src/Keyboard.css';
+import KeyboardedInput from 'react-touch-screen-keyboard';
+import 'react-touch-screen-keyboard/src/Keyboard.css';
 
 class Input extends React.Component {
   render() {
