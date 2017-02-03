@@ -1,10 +1,12 @@
-# react-screen-keyboard
+# react-touch-screen-keyboard
 
 ![alt tag](https://raw.githubusercontent.com/xTrinch/react-touch-screen-keyboard/master/keyboard.png)
 
 ## Quick start
 
 This library will render a virtual keyboard on the bottom of the screen when the input is selected. The usage is very simple - instead of using the input tag, use the KeyboardedInput tag from the library. You can control the input's value via the callback function you give to its props.
+
+Currently supported keyboards: us, de, ru
 
 **Installing via npm**
 
@@ -37,3 +39,6 @@ class Input extends React.Component {
 export default Input;
 
 ```
+
+
+This library was built around https://github.com/WiaczeslawP/react-screen-keyboard's codebase. Credit where credit's due :)
