@@ -41,4 +41,4 @@ export default Input;
 ```
 
 
-This library was built around https://github.com/WiaczeslawP/react-screen-keyboard's codebase. Credit where credit's due :)
+This library was built around https://github.com/WiaczeslawP/react-screen-keyboard 's codebase. Credit where credit's due :)
