@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/react-touch-screen-keyboard.svg)](https://badge.fury.io/js/react-touch-screen-keyboard)
+
 # react-touch-screen-keyboard
 
 ![alt tag](https://raw.githubusercontent.com/xTrinch/react-touch-screen-keyboard/master/keyboard.png)
