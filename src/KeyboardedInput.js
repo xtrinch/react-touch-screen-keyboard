@@ -48,7 +48,16 @@ class KeyboardedInput extends React.Component {
   render() {
     return (
       <div>
-        <input defaultValue={this.props.value} type={this.props.type} onFocus={this.handleFocus} onBlur={this.handleFocusLost} ref="input" />
+        <input 
+	  defaultValue={this.props.value} 
+	  type={this.props.type} 
+	  onFocus={this.handleFocus} 
+	  onBlur={this.handleFocusLost} 
+	  min={this.props.min}
+	  max={this.props.max}
+	  step={this.props.step}
+	  ref="input" 
+	/>
         {this.state.showKeyboard && this.props.enabled &&
           <Keyboard
             hideKeyboard={this.hideKeyboard}
