@@ -56,6 +56,7 @@ class KeyboardedInput extends React.Component {
 	  min={this.props.min}
 	  max={this.props.max}
 	  step={this.props.step}
+	  pattern={this.props.pattern}
 	  ref="input" 
 	/>
         {this.state.showKeyboard && this.props.enabled &&

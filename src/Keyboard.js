@@ -134,7 +134,9 @@ export default class Keyboard extends PureComponent {
 		}
 		setTimeout(() => {
 			inputNode.focus();
-			inputNode.setSelectionRange(nextSelectionPosition, nextSelectionPosition);
+			try {
+				inputNode.setSelectionRange(nextSelectionPosition, nextSelectionPosition);
+			} catch (e) {}
 		}, 0);
 		this.setState({uppercase: this.isUppercase()});
 		inputNode.dispatchEvent(new Event('input'));
