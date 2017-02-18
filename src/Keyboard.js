@@ -10,6 +10,7 @@ import BackspaceIcon from './icons/BackspaceIcon';
 import LanguageIcon from './icons/LanguageIcon';
 import ShiftIcon from './icons/ShiftIcon';
 
+
 export default class Keyboard extends PureComponent {
 	static propTypes = {
 		inputNode: PropTypes.any.isRequired,
