@@ -25,7 +25,7 @@ class KeyboardedInput extends React.Component {
   }
 
   handleChange(event) {
-    this.props.onChange(event);
+    this.props.onChange(event.target.value);
   }
 
   handleFocus() {

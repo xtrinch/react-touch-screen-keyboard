@@ -78,7 +78,7 @@ export default class Keyboard extends PureComponent {
                         selectionStart = inputNode.selectionStart; 
                         selectionEnd = inputNode.selectionEnd;
                 } catch (e) {
-                        selectionStart = 0;
+                        selectionStart = value.length;
                         selectionEnd = value.length;
                 }
 		const nextValue = value.substring(0, selectionStart) + key + value.substring(selectionEnd);
