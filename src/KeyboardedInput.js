@@ -49,7 +49,7 @@ class KeyboardedInput extends React.Component {
     return (
       <div>
         <input 
-	  defaultValue={this.props.value} 
+	  value={this.props.value} 
 	  type={this.props.type} 
 	  onFocus={this.handleFocus} 
 	  onBlur={this.handleFocusLost} 
@@ -57,6 +57,7 @@ class KeyboardedInput extends React.Component {
 	  max={this.props.max}
 	  step={this.props.step}
 	  pattern={this.props.pattern}
+	  onChange={this.handleChange}
 	  ref="input" 
 	/>
         {this.state.showKeyboard && this.props.enabled &&
