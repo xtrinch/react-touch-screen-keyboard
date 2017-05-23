@@ -49,6 +49,9 @@ class KeyboardedInput extends React.Component {
     return (
       <div>
         <input 
+          name={this.props.name}
+          className={this.props.className}
+          placeholder={this.props.placeholder}
 	  value={this.props.value} 
 	  type={this.props.type} 
 	  onFocus={this.handleFocus} 
