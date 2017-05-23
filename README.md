@@ -35,6 +35,9 @@ class Input extends React.Component {
         min={this.props.min}
         max={this.props.max}
         step={this.props.step}
+        name={this.props.name}
+        className={this.props.className}
+        placeholder={this.props.placeholder}
         defaultKeyboard="de"
         secondaryKeyboard="us" // optional
       />
