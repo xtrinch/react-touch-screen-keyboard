@@ -1,6 +1,6 @@
 {
   "name": "react-touch-screen-keyboard",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "React touch screen keyboard",
   "main": "KeyboardedInput.js",
   "scripts": {
