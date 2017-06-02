@@ -61,10 +61,10 @@ class KeyboardedInput extends React.Component {
 	  step={this.props.step}
 	  pattern={this.props.pattern}
 	  onChange={this.handleChange}
-	  readonly={this.props.readonly === true ? true : false}
+	  readOnly={this.props.readOnly === true ? true : false}
 	  ref="input" 
 	/>
-        {this.state.showKeyboard && this.props.enabled && this.props.readonly !== true &&
+        {this.state.showKeyboard && this.props.enabled && this.props.readOnly !== true &&
           <Keyboard
             hideKeyboard={this.hideKeyboard}
             defaultKeyboard={this.props.defaultKeyboard}
