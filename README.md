@@ -40,6 +40,7 @@ class Input extends React.Component {
         placeholder={this.props.placeholder}
         defaultKeyboard="de"
         secondaryKeyboard="us" // optional
+        readOnly={this.props.readOnly}
       />
     );
   }
