@@ -2,7 +2,7 @@ Boilerplate for developing ReactJS modules using Babel.
 
 ## Installation
 
-`git clone https://github.com/lassegit/npm-react-module CustomReactModule`
+`git clone --depth=1 --branch=master https://github.com/lassegit/npm-react-module CustomReactModule && cd $_ && sudo rm -r .git/`
 
 Remove the `.git` folder and rename the component in `src/index.js`. Styles resides in `src/style.css`.
 
