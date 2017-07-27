@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "dev": "webpack --config ./examples/webpack.config.js",
-    "lint": "eslint src",
+    "lint": "eslint src || exit 0",
     "build": "cross-env babel src --out-dir lib",
     "copy": "cp src/style.css lib/",
     "prepublish": "npm run clean && npm run build && npm run copy"

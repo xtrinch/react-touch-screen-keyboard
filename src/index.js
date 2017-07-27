@@ -4,7 +4,7 @@ import './style.css';
 
 export default class CustomReactModule extends Component {
   render() {
-    return <div />;
+    return <div>Hello world!</div>;
   }
 }
 
