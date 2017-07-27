@@ -1,8 +1,10 @@
+Boilerplate for developing ReactJS modules using Babel.
+
 ## Installation
 
 `git clone https://github.com/lassegit/npm-react-module CustomReactModule`
 
-Remove the .git folder and rename the main component in /src/index.js.
+Remove the `.git` folder and rename the component in `src/index.js`. Styles resides in `src/style.css`.
 
 ## Commands
 - `npm run dev` - start webpack for module development. You can open `examples/index.html` and customize `examples/index.js` to test your code. Webpack config resides in `examples/webpack.config.js`.
