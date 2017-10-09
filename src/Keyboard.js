@@ -89,7 +89,8 @@ export default class Keyboard extends PureComponent {
 		setTimeout(() => {
 			inputNode.focus();
 			try {
-				inputNode.setSelectionRange(selectionStart + key.length, selectionStart + key.length);
+				let offset = !isFinite(key) ? key.length : 1;
+				inputNode.setSelectionRange(selectionStart + offset, selectionStart + offset);
 			} catch (e) {}
 		}, 0);
 		this.setState({uppercase: this.isUppercase()});
