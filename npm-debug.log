@@ -1,0 +1,156 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\Users\\trinch\\repos\\react-touch-screen-keyboard',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\trinch\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle react-touch-screen-keyboard@0.1.14~prepublish: react-touch-screen-keyboard@0.1.14
+11 silly lifecycle react-touch-screen-keyboard@0.1.14~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\trinch\\AppData\\Roaming\\npm-cache\\react-touch-screen-keyboard\\0.1.14\\package.tgz',
+12 verbose tar pack   'C:\\Users\\trinch\\repos\\react-touch-screen-keyboard' ]
+13 verbose tarball C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package.tgz
+14 verbose folder C:\Users\trinch\repos\react-touch-screen-keyboard
+15 verbose addLocalTarball adding from inside cache C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package.tgz
+16 verbose correctMkdir C:\Users\trinch\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd react-touch-screen-keyboard@0.1.14
+18 verbose afterAdd C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\trinch\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package\package.json written
+21 silly publish { name: 'react-touch-screen-keyboard',
+21 silly publish   version: '0.1.14',
+21 silly publish   description: 'React touch screen keyboard',
+21 silly publish   main: 'KeyboardedInput.js',
+21 silly publish   scripts:
+21 silly publish    { dist: 'webpack -p',
+21 silly publish      build: 'babel ./src -d ./lib --source-maps' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/xTrinch/react-touch-screen-keyboard.git' },
+21 silly publish   keywords:
+21 silly publish    [ 'react',
+21 silly publish      'react-component',
+21 silly publish      'component',
+21 silly publish      'touchscreen',
+21 silly publish      'keyboard' ],
+21 silly publish   author:
+21 silly publish    { name: 'xTrinch',
+21 silly publish      email: 'mojca.rojko@gmail.com',
+21 silly publish      url: 'https://github.com/xTrinch' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/xTrinch/react-touch-screen-keyboard/issues' },
+21 silly publish   homepage: 'https://github.com/xTrinch/react-touch-screen-keyboard',
+21 silly publish   devDependencies:
+21 silly publish    { autoprefixer: '6.3.7',
+21 silly publish      'babel-cli': '^6.11.4',
+21 silly publish      'babel-core': '6.11.4',
+21 silly publish      'babel-eslint': '6.1.2',
+21 silly publish      'babel-loader': '6.2.4',
+21 silly publish      'babel-preset-es2015': '6.9.0',
+21 silly publish      'babel-preset-react': '6.11.1',
+21 silly publish      'babel-preset-react-hmre': '^1.1.1',
+21 silly publish      'babel-preset-stage-0': '6.5.0',
+21 silly publish      chai: '3.5.0',
+21 silly publish      cheerio: '0.20.0',
+21 silly publish      coveralls: '2.11.12',
+21 silly publish      eslint: '2.13.1',
+21 silly publish      'eslint-config-airbnb': '9.0.1',
+21 silly publish      'eslint-plugin-import': '1.12.0',
+21 silly publish      'eslint-plugin-jsx-a11y': '1.5.3',
+21 silly publish      'eslint-plugin-react': '5.2.2',
+21 silly publish      'gitbook-cli': '2.3.0',
+21 silly publish      istanbul: '1.1.0-alpha.1',
+21 silly publish      jsdom: '9.0.0',
+21 silly publish      mocha: '2.5.3',
+21 silly publish      'postcss-cli': '2.5.2',
+21 silly publish      'react-addons-test-utils': '^15.3.0',
+21 silly publish      'react-hot-loader': '1.3.0',
+21 silly publish      rimraf: '2.5.4',
+21 silly publish      sinon: '1.17.5',
+21 silly publish      'sinon-chai': '2.8.0',
+21 silly publish      webpack: '^1.13.1' },
+21 silly publish   dependencies:
+21 silly publish    { react: '^15.3.0',
+21 silly publish      'react-dom': '^15.3.0',
+21 silly publish      'css-modules-require-hook': '~4.0.1',
+21 silly publish      'style-loader': '~0.13.1',
+21 silly publish      'css-loader': '~0.23.1' },
+21 silly publish   readme: '[![npm version](https://badge.fury.io/js/react-touch-screen-keyboard.svg)](https://badge.fury.io/js/react-touch-screen-keyboard)\r\n[![npm](https://img.shields.io/npm/dt/react-touch-screen-keyboard.svg)]()\r\n# react-touch-screen-keyboard\r\n\r\n![alt tag](https://raw.githubusercontent.com/xTrinch/react-touch-screen-keyboard/master/keyboard.png)\r\n\r\n## Quick start\r\n\r\nThis library will render a virtual keyboard on the bottom of the screen when the input is selected. The usage is very simple - instead of using the input tag, use the KeyboardedInput tag from the library. You can control the input\'s value via the callback function you give to its props.\r\n\r\nCurrently supported keyboards: us, de, ru\r\n\r\n**Installing via npm**\r\n\r\n```\r\nnpm install react-touch-screen-keyboard\r\n```\r\n\r\n### Example\r\n\r\n```js\r\n\r\nimport React from \'react\';\r\nimport KeyboardedInput from \'react-touch-screen-keyboard\';\r\nimport \'react-touch-screen-keyboard/src/Keyboard.css\';\r\n\r\nclass Input extends React.Component {\r\n  render() {\r\n    return (\r\n      <KeyboardedInput\r\n        enabled\r\n        type={this.props.type}\r\n        onChange={this.props.onChange}\r\n        value={this.props.value}\r\n        min={this.props.min}\r\n        max={this.props.max}\r\n        step={this.props.step}\r\n        name={this.props.name}\r\n        className={this.props.className}\r\n        placeholder={this.props.placeholder}\r\n        defaultKeyboard="de"\r\n        secondaryKeyboard="us" // optional\r\n        readOnly={this.props.readOnly}\r\n      />\r\n    );\r\n  }\r\n}\r\nexport default Input;\r\n\r\n```\r\n\r\n#### Use Custom Keyboard\r\n\r\nYou can pass a Nx3 sized array into `defaultKeyboard` prop to render a customize layout.\r\n\r\n**Note:** The array must be 3 rows, however the size of the row\'s columns is not limited.\r\n\r\n```js\r\n\r\nimport React from \'react\';\r\nimport KeyboardedInput from \'react-touch-screen-keyboard\';\r\nimport \'react-touch-screen-keyboard/src/Keyboard.css\';\r\n\r\nclass Input extends React.Component {\r\n  render() {\r\n    const CustomMapping = [\r\n      [\'q\', \'w\', \'e\', \'r\', \'t\', \'y\', \'u\', \'i\', \'o\', \'p\'],\r\n      [\'a\', \'s\', \'d\', \'f\', \'g\', \'h\', \'j\', \'k\', \'l\', \'@\'],\r\n      [\'z\', \'x\', \'c\', \'v\', \'b\', \'n\', \'m\', \'.com\']\r\n    ];\r\n      \r\n    return (\r\n      <KeyboardedInput\r\n        enabled\r\n        type={this.props.type}\r\n        value={this.props.value}\r\n        name={this.props.name}\r\n        defaultKeyboard={CustomMapping}\r\n      />\r\n    );\r\n  }\r\n}\r\nexport default Input;\r\n\r\n```\r\n\r\n\r\nThis library was built around https://github.com/WiaczeslawP/react-screen-keyboard \'s codebase. Credit where credit\'s due :)\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '52a549d9f2b828e25e09814808a25a9f0d3b5ecb',
+21 silly publish   _id: 'react-touch-screen-keyboard@0.1.14',
+21 silly publish   _shasum: '8f6db10dade08229a84ce28cbd5d8b11d0357470',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name react-touch-screen-keyboard
+24 silly mapToRegistry scope (from config) @xtrinch
+25 verbose mapToRegistry no registry URL found in config for scope @xtrinch
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry data Result {
+28 silly mapToRegistry   raw: 'react-touch-screen-keyboard',
+28 silly mapToRegistry   scope: null,
+28 silly mapToRegistry   escapedName: 'react-touch-screen-keyboard',
+28 silly mapToRegistry   name: 'react-touch-screen-keyboard',
+28 silly mapToRegistry   rawSpec: '',
+28 silly mapToRegistry   spec: 'latest',
+28 silly mapToRegistry   type: 'tag' }
+29 silly mapToRegistry uri https://registry.npmjs.org/react-touch-screen-keyboard
+30 verbose publish registryBase https://registry.npmjs.org/
+31 silly publish uploading C:\Users\trinch\AppData\Roaming\npm-cache\react-touch-screen-keyboard\0.1.14\package.tgz
+32 verbose request uri https://registry.npmjs.org/react-touch-screen-keyboard
+33 verbose request sending authorization for write operation
+34 info attempt registry request try #1 at 4:52:21 PM
+35 verbose request using bearer token for auth
+36 verbose request id dbd605975c9f2496
+37 http request PUT https://registry.npmjs.org/react-touch-screen-keyboard
+38 http 403 https://registry.npmjs.org/react-touch-screen-keyboard
+39 verbose headers { 'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=300',
+39 verbose headers   'content-length': '92',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   date: 'Wed, 11 Oct 2017 05:52:23 GMT',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   connection: 'keep-alive',
+39 verbose headers   'x-served-by': 'cache-syd1624-SYD',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1507701142.383045,VS0,VE875',
+39 verbose headers   vary: 'Accept-Encoding, Accept' }
+40 verbose request invalidating C:\Users\trinch\AppData\Roaming\npm-cache\registry.npmjs.org\react-touch-screen-keyboard on PUT
+41 error publish Failed PUT 403
+42 verbose stack Error: You cannot publish over the previously published version 0.1.14. : react-touch-screen-keyboard
+42 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+42 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+42 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+42 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+42 verbose stack     at emitTwo (events.js:106:13)
+42 verbose stack     at Request.emit (events.js:191:7)
+42 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1048:10)
+42 verbose stack     at emitOne (events.js:96:13)
+42 verbose stack     at Request.emit (events.js:188:7)
+42 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:969:12)
+43 verbose statusCode 403
+44 verbose pkgid react-touch-screen-keyboard
+45 verbose cwd C:\Users\trinch\repos\react-touch-screen-keyboard
+46 error Windows_NT 10.0.15063
+47 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+48 error node v6.10.1
+49 error npm  v3.10.10
+50 error code E403
+51 error You cannot publish over the previously published version 0.1.14. : react-touch-screen-keyboard
+52 error If you need help, you may report this error at:
+52 error     <https://github.com/npm/npm/issues>
+53 verbose exit [ 1, true ]
