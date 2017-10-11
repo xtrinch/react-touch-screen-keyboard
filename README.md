@@ -49,5 +49,40 @@ export default Input;
 
 ```
 
+#### Use Custom Keyboard
+
+You can pass a Nx3 sized array into `defaultKeyboard` prop to render a customize layout.
+
+**Note:** The array must be 3 rows, however the size of the row's columns is not limited.
+
+```js
+
+import React from 'react';
+import KeyboardedInput from 'react-touch-screen-keyboard';
+import 'react-touch-screen-keyboard/src/Keyboard.css';
+
+class Input extends React.Component {
+  render() {
+    const CustomMapping = [
+      ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+      ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
+      ['z', 'x', 'c', 'v', 'b', 'n', 'm', '.com']
+    ];
+      
+    return (
+      <KeyboardedInput
+        enabled
+        type={this.props.type}
+        value={this.props.value}
+        name={this.props.name}
+        defaultKeyboard={CustomMapping}
+      />
+    );
+  }
+}
+export default Input;
+
+```
+
 
 This library was built around https://github.com/WiaczeslawP/react-screen-keyboard 's codebase. Credit where credit's due :)

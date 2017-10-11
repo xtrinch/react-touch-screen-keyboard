@@ -10,13 +10,12 @@ import BackspaceIcon from './icons/BackspaceIcon';
 import LanguageIcon from './icons/LanguageIcon';
 import ShiftIcon from './icons/ShiftIcon';
 
-
 export default class Keyboard extends PureComponent {
 	static propTypes = {
 		inputNode: PropTypes.any.isRequired,
 		onClick: PropTypes.func,
 		isFirstLetterUppercase: PropTypes.bool,
-		defaultKeyboard: PropTypes.string,
+		defaultKeyboard: PropTypes.any,
 		secondaryKeyboard: PropTypes.string,
 		hideKeyboard: PropTypes.func,
 	};
@@ -90,7 +89,8 @@ export default class Keyboard extends PureComponent {
 		setTimeout(() => {
 			inputNode.focus();
 			try {
-				inputNode.setSelectionRange(selectionStart + 1, selectionStart + 1);
+				let offset = !isFinite(key) ? key.length : 1;
+				inputNode.setSelectionRange(selectionStart + offset, selectionStart + offset);
 			} catch (e) {}
 		}, 0);
 		this.setState({uppercase: this.isUppercase()});
@@ -151,7 +151,9 @@ export default class Keyboard extends PureComponent {
 		} else if (this.state.currentLanguage === 'de') {
 			keysSet = GermanLayout;
 		} else if (this.state.currentLanguage === 'ru') {
-			keysSet = CyrillicLayout;
+            keysSet = CyrillicLayout;
+		} else if (this.state.currentLanguage) {
+			keysSet = this.state.currentLanguage;
 		} else {
 			keysSet = LatinLayout;
 		}
