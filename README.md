@@ -41,6 +41,7 @@ class Input extends React.Component {
         defaultKeyboard="de"
         secondaryKeyboard="us" // optional
         readOnly={this.props.readOnly}
+        opacity={0.9} // optional
       />
     );
   }
