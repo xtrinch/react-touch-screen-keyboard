@@ -1,6 +1,6 @@
 {
   "name": "react-touch-screen-keyboard",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "description": "React touch screen keyboard",
   "main": "KeyboardedInput.js",
   "scripts": {
@@ -59,6 +59,7 @@
     "react-dom": "^15.3.0",
     "css-modules-require-hook": "~4.0.1",
     "style-loader": "~0.13.1",
-    "css-loader": "~0.23.1"
+    "css-loader": "~0.23.1",
+    "react-draggable": "^3.0.3"
   }
 }
