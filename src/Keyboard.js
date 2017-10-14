@@ -9,6 +9,9 @@ import GermanLayout from './layouts/GermanLayout';
 import BackspaceIcon from './icons/BackspaceIcon';
 import LanguageIcon from './icons/LanguageIcon';
 import ShiftIcon from './icons/ShiftIcon';
+import DraggableIcon from './icons/DraggableIcon';
+
+import Draggable from 'react-draggable'; // The default
 
 export default class Keyboard extends PureComponent {
 	static propTypes = {
@@ -18,6 +21,7 @@ export default class Keyboard extends PureComponent {
 		defaultKeyboard: PropTypes.any,
 		secondaryKeyboard: PropTypes.string,
 		hideKeyboard: PropTypes.func,
+		opacity: PropTypes.number,
 	};
 
 	static defaultProps = {
@@ -184,93 +188,100 @@ export default class Keyboard extends PureComponent {
 		const symbolsKeyValue = this.getSymbolsKeyValue();
 
 		return (
-			<div className="keyboard keyboard-wrapper">
-				<div className="keyboard-row">
-					{numbers.map((button) =>
+			<Draggable>
+				<div className="keyboard keyboard-wrapper" style={{ opacity: `${typeof(this.props.opacity) !== 'undefined' ? this.props.opacity : 1}`}}>
+					<div className="keyboard-row">
+						{numbers.map((button) =>
+							<KeyboardButton
+								value={button}
+								onClick={this.handleLetterButtonClick}
+								classes={"keyboard-numberButton"}
+								key={button}
+							/>
+						)}
 						<KeyboardButton
-							value={button}
-							onClick={this.handleLetterButtonClick}
-							classes={"keyboard-numberButton"}
-							key={button}
+							value={<BackspaceIcon />}
+							onClick={this.handleBackspaceClick}
 						/>
-					)}
-					<KeyboardButton
-						value={<BackspaceIcon />}
-						onClick={this.handleBackspaceClick}
-					/>
-				</div>
+					</div>
 
-				<div className="keyboard-row">
-					{keys[0].map((button) =>
-						<KeyboardButton
-							value={button}
-							onClick={this.handleLetterButtonClick}
-							key={button}
-						/>
-					)}
-				</div>
+					<div className="keyboard-row">
+						{keys[0].map((button) =>
+							<KeyboardButton
+								value={button}
+								onClick={this.handleLetterButtonClick}
+								key={button}
+							/>
+						)}
+					</div>
 
-				<div className="keyboard-row">
-					{keys[1].map((button) =>
-						<KeyboardButton
-							value={button}
-							onClick={this.handleLetterButtonClick}
-							key={button}
-						/>
-					)}
-				</div>
+					<div className="keyboard-row">
+						{keys[1].map((button) =>
+							<KeyboardButton
+								value={button}
+								onClick={this.handleLetterButtonClick}
+								key={button}
+							/>
+						)}
+					</div>
 
-				<div className="keyboard-row">
-					<KeyboardButton
-						classes="shift-symbols"
-						value={<ShiftIcon />}
-						onClick={this.handleShiftClick}
-					/>
-					{keys[2].map((button) =>
+					<div className="keyboard-row">
 						<KeyboardButton
-							value={button}
-							onClick={this.handleLetterButtonClick}
-							key={button}
+							classes="shift-symbols"
+							value={<ShiftIcon />}
+							onClick={this.handleShiftClick}
 						/>
-					)}
-					<KeyboardButton
-						classes="shift-symbols"
-						value={symbolsKeyValue}
-						onClick={this.handleSymbolsClick}
-					/>
-				</div>
+						{keys[2].map((button) =>
+							<KeyboardButton
+								value={button}
+								onClick={this.handleLetterButtonClick}
+								key={button}
+							/>
+						)}
+						<KeyboardButton
+							classes="shift-symbols"
+							value={symbolsKeyValue}
+							onClick={this.handleSymbolsClick}
+						/>
+					</div>
 
-				<div className="keyboard-row">
-					{typeof secondaryKeyboard !== 'undefined' ?
+					<div className="keyboard-row">
+						{typeof secondaryKeyboard !== 'undefined' ?
+							<KeyboardButton
+								value={<LanguageIcon />}
+								onClick={this.handleLanguageClick}
+							/>
+						: null}
+						{inputNode.dataset.type === 'email' ?
+							<KeyboardButton
+								value={'@'}
+								onClick={this.handleLetterButtonClick}
+							/>
+						: null}
 						<KeyboardButton
-							value={<LanguageIcon />}
-							onClick={this.handleLanguageClick}
+							value={<DraggableIcon />}
+							classes=""
+							onClick={() => {}}
 						/>
-					: null}
-					{inputNode.dataset.type === 'email' ?
 						<KeyboardButton
-							value={'@'}
+							value={' '}
+							classes="keyboard-space"
 							onClick={this.handleLetterButtonClick}
 						/>
-					: null}
-					<KeyboardButton
-						value={' '}
-						classes="keyboard-space"
-						onClick={this.handleLetterButtonClick}
-					/>
-					{inputNode.dataset.type === 'email' ?
+						{inputNode.dataset.type === 'email' ?
+							<KeyboardButton
+								value={'.'}
+								onClick={this.handleLetterButtonClick}
+							/>
+						: null}
 						<KeyboardButton
-							value={'.'}
-							onClick={this.handleLetterButtonClick}
+							value={'↧'}
+							classes="keyboard-submit-button"
+							onClick={this.props.hideKeyboard}
 						/>
-					: null}
-					<KeyboardButton
-						value={'↧'}
-						classes="keyboard-submit-button"
-						onClick={this.props.hideKeyboard}
-					/>
+					</div>
 				</div>
-			</div>
+			</Draggable>
 		);
 	}
 }

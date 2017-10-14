@@ -20,7 +20,9 @@ export default class KeyboardButton extends PureComponent {
 	}
 
 	handleClick() {
-		this.props.onClick(this.props.value);
+		if (typeof (this.props.onClick) !== 'undefined') {
+			this.props.onClick(this.props.value);
+		}
 	}
 
 	render() {
