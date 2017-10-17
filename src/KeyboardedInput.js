@@ -29,7 +29,11 @@ class KeyboardedInput extends React.Component {
   }
 
   handleFocus() {
-    this.setState({...this.state, showKeyboard: true});
+    var that = this;
+    // prevent blinking of the keyboard if opaque
+    setTimeout(function(){
+        this.setState({...this.state, showKeyboard: true});
+    }, 0);
   }
 
   handleFocusLost(event) {
