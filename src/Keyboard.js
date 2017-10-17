@@ -38,6 +38,7 @@ export default class Keyboard extends PureComponent {
 		this.clearInput = this.clearInput.bind(this);
 		this.handleShiftClick = this.handleShiftClick.bind(this);
 		this.handleSymbolsClick = this.handleSymbolsClick.bind(this);
+		this.handleDragKeyClick = this.handleDragKeyClick.bind(this);
 
 		this.state = {
 			currentLanguage: props.defaultKeyboard,
@@ -99,6 +100,13 @@ export default class Keyboard extends PureComponent {
 		}, 0);
 		this.setState({uppercase: this.isUppercase()});
 		inputNode.dispatchEvent(new Event('input'));
+	}
+
+	handleDragKeyClick() {
+		const {inputNode} = this.props;
+		setTimeout(() => {
+			inputNode.focus();
+		}, 0);
 	}
 
 	isUppercase() {
@@ -261,7 +269,7 @@ export default class Keyboard extends PureComponent {
 						<KeyboardButton
 							value={<DraggableIcon />}
 							classes=""
-							onClick={() => {}}
+							onClick={this.handleDragKeyClick}
 						/>
 						<KeyboardButton
 							value={' '}
