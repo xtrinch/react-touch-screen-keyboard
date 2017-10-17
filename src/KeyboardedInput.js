@@ -32,7 +32,7 @@ class KeyboardedInput extends React.Component {
     var that = this;
     // prevent blinking of the keyboard if opaque
     setTimeout(function(){
-        this.setState({...this.state, showKeyboard: true});
+        that.setState({...this.state, showKeyboard: true});
     }, 0);
   }
 
