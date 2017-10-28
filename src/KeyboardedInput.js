@@ -76,6 +76,7 @@ class KeyboardedInput extends React.Component {
             inputNode={this.refs.input}
             opacity={this.props.opacity}
             isDraggable={this.props.isDraggable}
+            isFirstLetterUppercase={this.props.isFirstLetterUppercase}
           />
         }
       </div>
