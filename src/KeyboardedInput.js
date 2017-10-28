@@ -75,6 +75,7 @@ class KeyboardedInput extends React.Component {
             secondaryKeyboard={this.props.secondaryKeyboard}
             inputNode={this.refs.input}
             opacity={this.props.opacity}
+            isDraggable={this.props.isDraggable}
           />
         }
       </div>
