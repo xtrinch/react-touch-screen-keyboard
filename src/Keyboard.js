@@ -28,7 +28,7 @@ export default class Keyboard extends PureComponent {
 	static defaultProps = {
 		rightButtons: [],
 		isFirstLetterUppercase: false,
-        isDraggable: true,
+		isDraggable: true,
 		defaultKeyboard: 'us',
 	};
 
