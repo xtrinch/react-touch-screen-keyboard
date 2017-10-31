@@ -1,35 +1,36 @@
 {
-  "name": "npm-react-module",
-  "version": "1.0.0",
-  "description": "Easy customizable ReactJS module boilerplate for npm",
   "main": "./lib/index.js",
+
+  "name": "react-touch-screen-keyboard",
+  "version": "0.2.4",
+  "description": "React touch screen keyboard",
+  "main": "KeyboardedInput.js",
   "scripts": {
     "clean": "rimraf lib",
-    "dev": "webpack --config ./examples/webpack.config.js",
+    "start": "webpack-dev-server --config ./examples/webpack.config.js",
     "lint": "eslint src || exit 0",
     "build": "cross-env babel src --out-dir lib",
-    "copy": "cp src/style.css lib/",
+    "copy": "cp src/Keyboard.css lib/",
     "prepublish": "npm run clean && npm run build && npm run copy"
   },
-  "files": [
-    "lib",
-    "src"
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lassegit/npm-react-module"
+    "url": "https://github.com/xTrinch/react-touch-screen-keyboard"
   },
   "keywords": [
-    "boilerplate",
     "react",
-    "npm"
+    "react-component",
+    "component",
+    "touchscreen",
+    "keyboard"
   ],
-  "author": "Lasse",
+  "author": "xTrinch <mojca.rojko@gmail.com> (https://github.com/xTrinch)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lassegit/npm-react-module/issues"
+    "url": "https://github.com/xTrinch/react-touch-screen-keyboard/issues"
   },
-  "homepage": "https://github.com/lassegit/npm-react-module",
+  "homepage": "https://github.com/xTrinch/react-touch-screen-keyboard",
+
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
@@ -50,11 +51,16 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.18.2",
-    "webpack": "^3.4.1"
-  },
-  "dependencies": {
+    "webpack": "^3.4.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "~0.14.8 || ^15.0.0",
+    "react-dom": "~0.14.8 || ^15.0.0"
+  },
+  "dependencies": {
+    "react-draggable": "^3.0.3"
   }
 }

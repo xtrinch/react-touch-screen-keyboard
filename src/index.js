@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './style.css';
+var Keyboard = require('./Keyboard');
+var KeyboardButton = require('./KeyboardButton');
+var KeyboardedInput = require('./KeyboardedInput');
 
-export default class CustomReactModule extends Component {
-  render() {
-    return <div>Hello world!</div>;
-  }
-}
-
-CustomReactModule.propTypes = {};
-
-CustomReactModule.defaultProps = {};
+module.exports.Keyboard = Keyboard.default || Keyboard;
+module.exports = KeyboardedInput.default || KeyboardedInput;
+module.exports.KeyboardButton = KeyboardButton.default || KeyboardButton;

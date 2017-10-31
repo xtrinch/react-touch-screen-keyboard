@@ -8,16 +8,17 @@ module.exports = {
     path: __dirname,
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: path.resolve(__dirname),
+    port: 8080,
+    publicPath: '/'
+  },
   devtool: 'cheap-module-eval-source-map',
   module: {
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader',
-        query:
-        {
-          presets:['es2015', 'react']
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.css/,

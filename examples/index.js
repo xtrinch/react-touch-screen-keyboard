@@ -1,11 +1,18 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import CustomReactModule from '../src/index';
+import React from 'react';
+import ReactDom from 'react-dom';
+import KeyboardedInput from '../src';
+import '../src/Keyboard.css';
 
 ReactDom.render(
   <div>
-    <p>You rendered the CustomReactModule:</p>
-    <CustomReactModule />
+    <p>react-touch-screen-keyboard</p>
+    <KeyboardedInput enabled />
+    <br />
+    <KeyboardedInput enabled />
+	<br />
+    <KeyboardedInput enabled />
+    <br />
+    <KeyboardedInput enabled />
   </div>,
   document.getElementById('app')
 )
