@@ -1,10 +1,8 @@
 {
-  "main": "./lib/index.js",
-
   "name": "react-touch-screen-keyboard",
   "version": "0.2.4",
   "description": "React touch screen keyboard",
-  "main": "KeyboardedInput.js",
+  "main": "./lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
     "start": "webpack-dev-server --config ./examples/webpack.config.js",
@@ -30,7 +28,6 @@
     "url": "https://github.com/xTrinch/react-touch-screen-keyboard/issues"
   },
   "homepage": "https://github.com/xTrinch/react-touch-screen-keyboard",
-
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
