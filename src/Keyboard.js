@@ -23,11 +23,13 @@ export default class Keyboard extends PureComponent {
 		secondaryKeyboard: PropTypes.string,
 		hideKeyboard: PropTypes.func,
 		opacity: PropTypes.number,
+		isDraggable: PropTypes.bool,
 	};
 
 	static defaultProps = {
 		rightButtons: [],
 		isFirstLetterUppercase: false,
+		isDraggable: true,
 		defaultKeyboard: 'us',
 	};
 
@@ -267,11 +269,13 @@ export default class Keyboard extends PureComponent {
 								onClick={this.handleLetterButtonClick}
 							/>
 						: null}
-						<KeyboardButton
-							value={<DraggableIcon />}
-							classes=""
-							onClick={this.handleDragKeyClick}
-						/>
+						{this.props.isDraggable ?
+							<KeyboardButton
+								value={<DraggableIcon />}
+								classes=""
+								onClick={this.handleDragKeyClick}
+							/>
+						: null}
 						<KeyboardButton
 							value={' '}
 							classes="keyboard-space"
