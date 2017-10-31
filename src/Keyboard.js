@@ -194,7 +194,7 @@ export default class Keyboard extends PureComponent {
 	render() {
 		const {rightButtons, inputNode, secondaryKeyboard} = this.props;
 		const keys = this.getKeys();
-		const numbers = [1, 2, 3, 4, 5, 7, 8, 9, 0];
+		const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 		const symbolsKeyValue = this.getSymbolsKeyValue();
 
 		return (
