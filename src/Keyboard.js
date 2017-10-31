@@ -28,7 +28,7 @@ export default class Keyboard extends PureComponent {
 	static defaultProps = {
 		rightButtons: [],
 		isFirstLetterUppercase: false,
-		isDraggable: true,
+		isDraggable: false,
 		defaultKeyboard: 'us',
 	};
 
@@ -78,15 +78,15 @@ export default class Keyboard extends PureComponent {
 	handleLetterButtonClick(key) {
 		const {inputNode} = this.props;
 		const {value} = inputNode;
-                let selectionStart;
-                let selectionEnd;
-                try {
-                        selectionStart = inputNode.selectionStart;
-                        selectionEnd = inputNode.selectionEnd;
-                } catch (e) {
-                        selectionStart = value.length;
-                        selectionEnd = value.length;
-                }
+        let selectionStart;
+        let selectionEnd;
+        try {
+                selectionStart = inputNode.selectionStart;
+                selectionEnd = inputNode.selectionEnd;
+        } catch (e) {
+                selectionStart = value.length;
+                selectionEnd = value.length;
+        }
 		const nextValue = value.substring(0, selectionStart) + key + value.substring(selectionEnd);
 
 		inputNode.value = nextValue;
@@ -120,16 +120,16 @@ export default class Keyboard extends PureComponent {
 
 	handleBackspaceClick() {
 		const {inputNode} = this.props;
-                const {value} = inputNode;
-                let selectionStart;
-                let selectionEnd;
-                try {
-                        selectionStart = inputNode.selectionStart;
-                        selectionEnd = inputNode.selectionEnd;
-                } catch (e) {
-                        selectionStart = 0;
-                        selectionEnd = value.length;
-                }
+        const {value} = inputNode;
+        let selectionStart;
+        let selectionEnd;
+        try {
+                selectionStart = inputNode.selectionStart;
+                selectionEnd = inputNode.selectionEnd;
+        } catch (e) {
+                selectionStart = 0;
+                selectionEnd = value.length;
+        }
 
 		let nextValue;
 		let nextSelectionPosition;
