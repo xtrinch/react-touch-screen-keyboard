@@ -82,7 +82,7 @@ export default class Keyboard extends PureComponent {
                 let selectionStart;
                 let selectionEnd;
                 try {
-                        selectionStart = inputNode.selectionStart; 
+                        selectionStart = inputNode.selectionStart;
                         selectionEnd = inputNode.selectionEnd;
                 } catch (e) {
                         selectionStart = value.length;
@@ -125,7 +125,7 @@ export default class Keyboard extends PureComponent {
                 let selectionStart;
                 let selectionEnd;
                 try {
-                        selectionStart = inputNode.selectionStart; 
+                        selectionStart = inputNode.selectionStart;
                         selectionEnd = inputNode.selectionEnd;
                 } catch (e) {
                         selectionStart = 0;
@@ -195,7 +195,7 @@ export default class Keyboard extends PureComponent {
 	render() {
 		const {rightButtons, inputNode, secondaryKeyboard} = this.props;
 		const keys = this.getKeys();
-		const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+		const numbers = [1, 2, 3, 4, 5, 7, 8, 9, 0];
 		const symbolsKeyValue = this.getSymbolsKeyValue();
 
 		return (
