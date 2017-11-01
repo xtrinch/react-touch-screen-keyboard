@@ -86,3 +86,11 @@ class Input extends React.Component {
 export default Input;
 
 ```
+
+#### Running Local Example
+
+    # NPM
+    $ npm run-script start
+    
+    # Yarn
+    $ yarn start
