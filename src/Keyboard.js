@@ -29,7 +29,7 @@ export default class Keyboard extends PureComponent {
 	static defaultProps = {
 		rightButtons: [],
 		isFirstLetterUppercase: false,
-		isDraggable: false,
+		isDraggable: true,
 		defaultKeyboard: 'us',
 	};
 
@@ -100,7 +100,7 @@ export default class Keyboard extends PureComponent {
 				let offset = !isFinite(key) ? key.length : 1;
 				inputNode.setSelectionRange(selectionStart + offset, selectionStart + offset);
 			} catch (e) {}
-		}, 0);
+		});
 		this.setState({uppercase: this.isUppercase()});
 		inputNode.dispatchEvent(new Event('input'));
 	}
@@ -199,7 +199,7 @@ export default class Keyboard extends PureComponent {
 		const symbolsKeyValue = this.getSymbolsKeyValue();
 
 		return (
-			<Draggable>
+			<Draggable disabled={this.props.isDraggable == false ? true : false}>
 				<div className="keyboard keyboard-wrapper" style={{ opacity: `${typeof(this.props.opacity) !== 'undefined' ? this.props.opacity : 1}`}}>
 					<div className="keyboard-row">
 						{numbers.map((button) =>
@@ -269,7 +269,7 @@ export default class Keyboard extends PureComponent {
 								onClick={this.handleLetterButtonClick}
 							/>
 						: null}
-						{this.props.isDraggable ?
+						{this.props.isDraggable != false ?
 							<KeyboardButton
 								value={<DraggableIcon />}
 								classes=""
