@@ -9,6 +9,8 @@ export default class MainComponent extends React.Component {
     this.state = { 
     	value: '', 
     	value1: '',
+    	value2: '',
+    	value3: '',
     	customMapping: [
 					      ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
 					      ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -17,6 +19,9 @@ export default class MainComponent extends React.Component {
     };
     this.handleValueChange = this.handleValueChange.bind(this);
     this.handleValue1Change = this.handleValue1Change.bind(this);
+    this.handleValue2Change = this.handleValue2Change.bind(this);
+    this.handleValue3Change = this.handleValue3Change.bind(this);
+
   }
 
   handleValueChange(val) {
@@ -27,6 +32,13 @@ export default class MainComponent extends React.Component {
     this.setState({ value1: val });
   }
 
+  handleValue2Change(val) {
+    this.setState({ value2: val });
+  }
+
+   handleValue3Change(val) {
+    this.setState({ value3: val });
+  }
   render() {
     return (
       <div>
@@ -35,9 +47,9 @@ export default class MainComponent extends React.Component {
         <br />
         <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} enabled isDraggable={false} />
         <br />
-        <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} enabled isDraggable={true} />
+        <KeyboardedInput value={this.state.value2} onChange={(value) => { this.handleValue2Change(value); }} enabled isDraggable={true} />
         <br />
-        <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} defaultKeyboard={this.state.customMapping} enabled isDraggable={true} />
+        <KeyboardedInput value={this.state.value3} onChange={(value) => { this.handleValue3Change(value); }} defaultKeyboard={this.state.customMapping} enabled isDraggable={true} />
       </div>
     );
   }
