@@ -6,7 +6,15 @@ import '../src/Keyboard.css';
 export default class MainComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', value1: '' };
+    this.state = { 
+    	value: '', 
+    	value1: '',
+    	customMapping: [
+					      ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+					      ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
+					      ['z', 'x', 'c', 'v', 'b', 'n', 'm', '.com']
+					    ]
+    };
     this.handleValueChange = this.handleValueChange.bind(this);
     this.handleValue1Change = this.handleValue1Change.bind(this);
   }
@@ -23,11 +31,13 @@ export default class MainComponent extends React.Component {
     return (
       <div>
         <p>react-touch-screen-keyboard</p>
-        <KeyboardedInput value={this.state.value} onChange={(value) => { this.handleValueChange(value); }} opacity={0.8} enabled />
+        <KeyboardedInput value={this.state.value} onChange={(value) => { this.handleValueChange(value); }} opacity={0.8} placeholder="testme" enabled />
         <br />
         <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} enabled isDraggable={false} />
         <br />
         <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} enabled isDraggable={true} />
+        <br />
+        <KeyboardedInput value={this.state.value1} onChange={(value) => { this.handleValue1Change(value); }} defaultKeyboard={this.state.customMapping} enabled isDraggable={true} />
       </div>
     );
   }
