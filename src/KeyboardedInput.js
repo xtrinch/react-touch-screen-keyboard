@@ -30,14 +30,19 @@ class KeyboardedInput extends React.Component {
 
   handleFocus() {
     var that = this;
-    that.setState({...this.state, showKeyboard: true});
+    // prevent blinking of the keyboard if opaque
+    setTimeout(function(){
+        that.setState({...this.state, showKeyboard: true});
+    }, 0);
   }
 
   handleFocusLost(event) {
     var that = this;
-    if (!document.activeElement.classList.contains("keyboard-button") && !document.activeElement.classList.contains("keyboard") && !document.activeElement.classList.contains("keyboard-row")) {
-      that.setState({...that.state, showKeyboard: false});
-    }
+    setTimeout(function(){
+       if (!document.activeElement.classList.contains("keyboard-button") && !document.activeElement.classList.contains("keyboard") && !document.activeElement.classList.contains("keyboard-row")) {
+         that.setState({...that.state, showKeyboard: false});
+       }
+    }, 0);
   }
 
   hideKeyboard() {

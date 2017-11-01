@@ -28,7 +28,7 @@ export default class MainComponent extends React.Component {
         return (
 			<div>
 				<p>react-touch-screen-keyboard</p>
-				<KeyboardedInput onChange={(value) => {this.handleValueChange(value)}} opacity="0.8" enabled />
+				<KeyboardedInput onChange={(value) => {this.handleValueChange(value)}} opacity={0.8} enabled />
 				<br />
 				<KeyboardedInput onChange={(value) => {this.handleValue1Change(value)}} enabled />
 			</div>
