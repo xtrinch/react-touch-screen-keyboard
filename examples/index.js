@@ -29,6 +29,7 @@ export default class MainComponent extends React.Component {
       </div>
     );
   }
+}
 
 ReactDom.render(
   <MainComponent />,
