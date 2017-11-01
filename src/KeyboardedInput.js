@@ -32,6 +32,9 @@ class KeyboardedInput extends React.Component {
     var that = this;
     // prevent blinking of the keyboard if opaque
     setTimeout(function(){
+        that.refs.input.focus();
+        that.refs.input.select();
+        that.refs.input.setSelectionRange(that.props.value.length, that.props.value.length);
         that.setState({...this.state, showKeyboard: true});
     }, 0);
   }
@@ -40,6 +43,7 @@ class KeyboardedInput extends React.Component {
     var that = this;
     setTimeout(function(){
        if (!document.activeElement.classList.contains("keyboard-button") && !document.activeElement.classList.contains("keyboard") && !document.activeElement.classList.contains("keyboard-row")) {
+         //that.refs.input.blur();
          that.setState({...that.state, showKeyboard: false});
        }
     }, 0);
