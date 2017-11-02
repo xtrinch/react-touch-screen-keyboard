@@ -1,6 +1,6 @@
 {
   "name": "react-touch-screen-keyboard",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "React touch screen keyboard",
   "main": "./lib/index.js",
   "scripts": {
