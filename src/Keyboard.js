@@ -32,6 +32,7 @@ export default class Keyboard extends PureComponent {
     isFirstLetterUppercase: true,
     isDraggable: true,
     defaultKeyboard: 'us',
+    dataset: { type: 'input' },
   };
 
   constructor(props) {
