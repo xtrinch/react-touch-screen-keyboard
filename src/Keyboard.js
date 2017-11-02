@@ -24,6 +24,7 @@ export default class Keyboard extends PureComponent {
     hideKeyboard: PropTypes.func,
     opacity: PropTypes.number,
     isDraggable: PropTypes.bool,
+    dataset: PropTypes.any,
   };
 
   static defaultProps = {
