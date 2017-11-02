@@ -1,6 +1,6 @@
-var Keyboard = require('./Keyboard');
-var KeyboardButton = require('./KeyboardButton');
-var KeyboardedInput = require('./KeyboardedInput');
+const Keyboard = require('./Keyboard');
+const KeyboardButton = require('./KeyboardButton');
+const KeyboardedInput = require('./KeyboardedInput');
 
 module.exports.Keyboard = Keyboard.default || Keyboard;
 module.exports = KeyboardedInput.default || KeyboardedInput;
