@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ProvidePlugin = require('provide-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './index.js'),
@@ -31,6 +32,9 @@ module.exports = {
   },
   watch: true,
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new ProvidePlugin({
+      CustomEvent: 'custom-event-polyfill'
+    })
   ]
 };
