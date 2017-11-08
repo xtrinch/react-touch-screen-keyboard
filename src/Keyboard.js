@@ -226,45 +226,32 @@ export default class Keyboard extends PureComponent {
             />
           </div>
 
-          <div className="keyboard-row">
-            {keys[0].map(button =>
-              <KeyboardButton
-                value={button}
-                onClick={this.handleLetterButtonClick}
-                key={button}
-              />,
-            )}
-          </div>
+          {keys.map((row, i) =>
+            <div key={`r${i}`} className="keyboard-row">
+              {keys.length === i + 1 &&
+                <KeyboardButton
+                  classes="shift-symbols"
+                  value={<ShiftIcon />}
+                  onClick={this.handleShiftClick}
+                />
+              }
+              {row.map((button, ii) =>
+                <KeyboardButton
+                  value={button}
+                  onClick={this.handleLetterButtonClick}
+                  key={`b${ii}`}
+                />,
+              )}
 
-          <div className="keyboard-row">
-            {keys[1].map(button =>
-              <KeyboardButton
-                value={button}
-                onClick={this.handleLetterButtonClick}
-                key={button}
-              />,
-            )}
-          </div>
-
-          <div className="keyboard-row">
-            <KeyboardButton
-              classes="shift-symbols"
-              value={<ShiftIcon />}
-              onClick={this.handleShiftClick}
-            />
-            {keys[2].map(button =>
-              <KeyboardButton
-                value={button}
-                onClick={this.handleLetterButtonClick}
-                key={button}
-              />,
-            )}
-            <KeyboardButton
-              classes="shift-symbols"
-              value={symbolsKeyValue}
-              onClick={this.handleSymbolsClick}
-            />
-          </div>
+              {keys.length === i + 1 &&
+                <KeyboardButton
+                  classes="shift-symbols"
+                  value={symbolsKeyValue}
+                  onClick={this.handleSymbolsClick}
+                />
+              }
+            </div>,
+          )}
 
           <div className="keyboard-row">
             {typeof secondaryKeyboard !== 'undefined' ?
