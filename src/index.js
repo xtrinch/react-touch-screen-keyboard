@@ -1,3 +1,5 @@
+require('custom-event-polyfill');
+
 const Keyboard = require('./Keyboard');
 const KeyboardButton = require('./KeyboardButton');
 const KeyboardedInput = require('./KeyboardedInput');
