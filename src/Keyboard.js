@@ -103,7 +103,7 @@ export default class Keyboard extends PureComponent {
     setTimeout(() => {
       inputNode.focus();
     }, 0);
-    inputNode.dispatchEvent(new Event('input'));
+    inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
   handleShiftClick() {
@@ -142,7 +142,7 @@ export default class Keyboard extends PureComponent {
       }
     });
     this.setState({ uppercase: this.isUppercase() });
-    inputNode.dispatchEvent(new Event('input'));
+    inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
   handleDragKeyClick() {
@@ -196,7 +196,7 @@ export default class Keyboard extends PureComponent {
       }
     }, 0);
     this.setState({ uppercase: this.isUppercase() });
-    inputNode.dispatchEvent(new Event('input'));
+    inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
   render() {
