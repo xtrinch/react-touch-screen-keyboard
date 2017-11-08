@@ -1,6 +1,6 @@
 {
   "name": "react-touch-screen-keyboard",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React touch screen keyboard",
   "main": "./lib/index.js",
   "scripts": {
@@ -59,6 +59,7 @@
     "react-dom": "~0.14.8 || ^15.0.0"
   },
   "dependencies": {
+    "custom-event-polyfill": "^0.3.0",
     "react-draggable": "^3.0.3"
   }
 }
