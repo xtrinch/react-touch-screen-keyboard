@@ -8,7 +8,7 @@ class KeyboardedInput extends React.Component {
     name: PropTypes.any,
     className: PropTypes.any,
     placeholder: PropTypes.any,
-    value: PropTypes.any,
+    value: PropTypes.any.isRequired,
     type: PropTypes.any,
     min: PropTypes.any,
     max: PropTypes.any,
@@ -52,12 +52,14 @@ class KeyboardedInput extends React.Component {
 
   handleFocus() {
     const that = this;
-    // prevent blinking of the keyboard if opaque
+    // Prevent blinking of the keyboard if opaque
     setTimeout(() => {
-      that.input.focus();
-      that.input.select();
-      that.input.setSelectionRange(that.props.value.length, that.props.value.length);
-      that.setState({ ...this.state, showKeyboard: true });
+      if (typeof(that.props.value) !== 'undefined') {
+        that.input.focus();
+        that.input.select();
+        that.input.setSelectionRange(that.props.value.length, that.props.value.length);
+        that.setState({ ...this.state, showKeyboard: true });
+      }
     }, 0);
   }
 
