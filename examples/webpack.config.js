@@ -1,40 +1,40 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ProvidePlugin = require('provide-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProvidePlugin = require('provide-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './index.js'),
   output: {
     path: __dirname,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname),
     port: 8080,
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      }
-    ]
+          use: 'css-loader',
+        }),
+      },
+    ],
   },
   watch: true,
   plugins: [
     new ExtractTextPlugin('style.css'),
     new ProvidePlugin({
-      CustomEvent: 'custom-event-polyfill'
-    })
-  ]
+      CustomEvent: 'custom-event-polyfill',
+    }),
+  ],
 };
