@@ -22,7 +22,8 @@ npm install react-touch-screen-keyboard
 
 import React from 'react';
 import KeyboardedInput from 'react-touch-screen-keyboard';
-import 'react-touch-screen-keyboard/src/Keyboard.css';
+import 'react-touch-screen-keyboard/lib/Keyboard.css'; // if you just want css
+import 'react-touch-screen-keyboard/lib/Keyboard.scss'; // if you've got sass-loader
 
 class Input extends React.Component {
   render() {
@@ -62,7 +63,7 @@ You can pass a Nx3 sized array into `defaultKeyboard` prop to render a customize
 
 import React from 'react';
 import KeyboardedInput from 'react-touch-screen-keyboard';
-import 'react-touch-screen-keyboard/src/Keyboard.css';
+import 'react-touch-screen-keyboard/lib/Keyboard.css';
 
 class Input extends React.Component {
   render() {

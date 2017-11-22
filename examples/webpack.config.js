@@ -6,28 +6,32 @@ module.exports = {
   entry: path.resolve(__dirname, './index.js'),
   output: {
     path: __dirname,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname),
     port: 8080,
-    publicPath: '/'
+    publicPath: '/',
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
-        })
+          use: 'css-loader',
+        }),
+      },
+      {
+          test: /\.scss$/,
+          loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
-    ]
+    ],
   },
   watch: true,
   plugins: [
