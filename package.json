@@ -8,8 +8,9 @@
     "start": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./examples/webpack.config.js",
     "lint": "eslint src || exit 0",
     "build": "cross-env babel src --out-dir lib",
+    "copy": "cp src/Keyboard.scss lib/",
     "scss": "node-sass src/Keyboard.scss -o lib --output-style compressed --source-map true",
-    "prepublish": "npm run clean && npm run build && npm run scss"
+    "prepublish": "npm run clean && npm run build && npm run scss && npm run copy"
   },
   "repository": {
     "type": "git",
