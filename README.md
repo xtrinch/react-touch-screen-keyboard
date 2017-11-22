@@ -36,7 +36,8 @@ class Input extends React.Component {
         max={this.props.max}
         step={this.props.step}
         name={this.props.name}
-        className={this.props.className}
+        inputClassName={this.props.inputClassName}
+        keyboardClassName={this.props.keyboardClassName}
         placeholder={this.props.placeholder}
         defaultKeyboard="de"
         secondaryKeyboard="us" // optional
