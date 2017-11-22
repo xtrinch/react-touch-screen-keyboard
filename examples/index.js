@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import KeyboardedInput from '../src';
-import '../src/Keyboard.css';
+import '../src/Keyboard.scss';
 
 export default class MainComponent extends React.Component {
   constructor(props) {
