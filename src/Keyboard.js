@@ -25,6 +25,7 @@ export default class Keyboard extends PureComponent {
     opacity: PropTypes.number,
     isDraggable: PropTypes.bool,
     dataset: PropTypes.any,
+    keyboardClassName: PropTypes.any,
   };
 
   static defaultProps = {
@@ -206,9 +207,12 @@ export default class Keyboard extends PureComponent {
     const symbolsKeyValue = this.getSymbolsKeyValue();
 
     return (
-      <Draggable disabled={this.props.isDraggable === false}>
+      <Draggable 
+        disabled={this.props.isDraggable === false}
+        defaultPosition={{x: 0, y: 0}}
+      >
         <div
-          className="keyboard keyboard-wrapper"
+          className={`keyboard keyboard-wrapper ${typeof(this.props.keyboardClassName) !== 'undefined' ? this.props.keyboardClassName : ''}`}
           style={{ opacity: `${typeof (this.props.opacity) !== 'undefined' ? this.props.opacity : 1}` }}
         >
           <div className="keyboard-row">
