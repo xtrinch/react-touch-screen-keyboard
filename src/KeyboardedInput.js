@@ -6,7 +6,8 @@ import Keyboard from './Keyboard';
 class KeyboardedInput extends React.Component {
   static propTypes = {
     name: PropTypes.any,
-    className: PropTypes.any,
+    inputClassName: PropTypes.any,
+    keyboardClassName: PropTypes.any,
     placeholder: PropTypes.any,
     value: PropTypes.any.isRequired,
     type: PropTypes.any,
@@ -81,7 +82,7 @@ class KeyboardedInput extends React.Component {
       <div>
         <input
           name={this.props.name}
-          className={this.props.className}
+          className={this.props.inputClassName}
           placeholder={this.props.placeholder}
           value={this.props.value}
           type={this.props.type}
@@ -105,6 +106,7 @@ class KeyboardedInput extends React.Component {
           opacity={this.props.opacity}
           isDraggable={this.props.isDraggable}
           isFirstLetterUppercase={this.props.isFirstLetterUppercase}
+          keyboardClassName={this.props.keyboardClassName}
         />
         }
       </div>

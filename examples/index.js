@@ -85,6 +85,7 @@ export default class MainComponent extends React.Component {
           dataset={{ type: 'email' }}
           onChange={(value) => { this.handleValue4Change(value); }}
           enabled
+          keyboardClassName="testme"
         />
       </div>
     );
