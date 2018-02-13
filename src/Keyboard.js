@@ -19,6 +19,7 @@ export default class Keyboard extends PureComponent {
     inputNode: PropTypes.any.isRequired,
     onClick: PropTypes.func,
     isFirstLetterUppercase: PropTypes.bool,
+    uppercaseAfterSpace: PropTypes.bool,
     defaultKeyboard: PropTypes.any,
     secondaryKeyboard: PropTypes.string,
     hideKeyboard: PropTypes.func,
@@ -31,6 +32,7 @@ export default class Keyboard extends PureComponent {
   static defaultProps = {
     rightButtons: [],
     isFirstLetterUppercase: true,
+    uppercaseAfterSpace: false,
     isDraggable: true,
     defaultKeyboard: 'us',
     dataset: { type: 'input' },
@@ -154,10 +156,11 @@ export default class Keyboard extends PureComponent {
   }
 
   isUppercase() {
-    const { inputNode, isFirstLetterUppercase, dataset } = this.props;
+    const { inputNode, isFirstLetterUppercase, uppercaseAfterSpace, dataset } = this.props;
     return inputNode.type !== 'password' &&
       dataset.type !== 'email' &&
-      !inputNode.value.length && isFirstLetterUppercase;
+      ((!inputNode.value.length && isFirstLetterUppercase) 
+      || (inputNode.value.length > 0 && inputNode.value[inputNode.value.length - 1] == ' ' && uppercaseAfterSpace));
   }
 
   handleBackspaceClick() {

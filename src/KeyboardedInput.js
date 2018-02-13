@@ -22,6 +22,7 @@ class KeyboardedInput extends React.Component {
     opacity: PropTypes.any,
     isDraggable: PropTypes.any,
     isFirstLetterUppercase: PropTypes.any,
+    uppercaseAfterSpace: PropTypes.any,
     dataset: PropTypes.any,
     onChange: PropTypes.func,
   };
@@ -106,6 +107,7 @@ class KeyboardedInput extends React.Component {
           opacity={this.props.opacity}
           isDraggable={this.props.isDraggable}
           isFirstLetterUppercase={this.props.isFirstLetterUppercase}
+          uppercaseAfterSpace={this.props.uppercaseAfterSpace}
           keyboardClassName={this.props.keyboardClassName}
         />
         }
