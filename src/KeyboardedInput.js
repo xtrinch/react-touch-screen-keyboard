@@ -22,6 +22,7 @@ class KeyboardedInput extends React.Component {
     opacity: PropTypes.any,
     isDraggable: PropTypes.any,
     isFirstLetterUppercase: PropTypes.any,
+    uppercaseAfterSpace: PropTypes.any,
     dataset: PropTypes.any,
     onChange: PropTypes.func,
   };
@@ -55,7 +56,7 @@ class KeyboardedInput extends React.Component {
     const that = this;
     // Prevent blinking of the keyboard if opaque
     setTimeout(() => {
-      if (typeof(that.props.value) !== 'undefined') {
+      if (typeof (that.props.value) !== 'undefined') {
         that.input.focus();
         that.input.select();
         that.input.setSelectionRange(that.props.value.length, that.props.value.length);
@@ -106,6 +107,7 @@ class KeyboardedInput extends React.Component {
           opacity={this.props.opacity}
           isDraggable={this.props.isDraggable}
           isFirstLetterUppercase={this.props.isFirstLetterUppercase}
+          uppercaseAfterSpace={this.props.uppercaseAfterSpace}
           keyboardClassName={this.props.keyboardClassName}
         />
         }
