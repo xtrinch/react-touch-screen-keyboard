@@ -12,6 +12,7 @@ export default class MainComponent extends React.Component {
       value2: '',
       value3: '',
       value4: '',
+      value5: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -23,6 +24,7 @@ export default class MainComponent extends React.Component {
     this.handleValue2Change = this.handleValue2Change.bind(this);
     this.handleValue3Change = this.handleValue3Change.bind(this);
     this.handleValue4Change = this.handleValue4Change.bind(this);
+    this.handleValue5Change = this.handleValue5Change.bind(this);
   }
 
   handleValueChange(val) {
@@ -43,6 +45,10 @@ export default class MainComponent extends React.Component {
 
   handleValue4Change(val) {
     this.setState({ value4: val });
+  }
+
+  handleValue5Change(val) {
+    this.setState({ value5: val });
   }
   render() {
     return (
@@ -86,6 +92,13 @@ export default class MainComponent extends React.Component {
           onChange={(value) => { this.handleValue4Change(value); }}
           enabled
           keyboardClassName="testme"
+        />
+        <p>Uppercase After Space (name entry)</p>
+        <KeyboardedInput
+          value={this.state.value5}
+          onChange={(value) => { this.handleValue5Change(value); }}
+          enabled
+          uppercaseAfterSpace={true}
         />
       </div>
     );

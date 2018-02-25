@@ -43,6 +43,7 @@ class Input extends React.Component {
         defaultKeyboard="de"
         secondaryKeyboard="us" // optional
         isFirstLetterUppercase={true} // optional, default is `false`
+        uppercaseAfterSpace={true} // optional, default is `false`
         isDraggable={false} // optional, default is `true`
         readOnly={this.props.readOnly} // optional
         opacity={0.9} // optional
