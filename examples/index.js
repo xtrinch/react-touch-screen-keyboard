@@ -50,10 +50,12 @@ export default class MainComponent extends React.Component {
   handleValue5Change(val) {
     this.setState({ value5: val });
   }
+
   render() {
     return (
       <div>
         <h1>React Touch Screen Keyboard Examples</h1>
+
         <p>Standard</p>
         <KeyboardedInput
           value={this.state.value}
@@ -62,6 +64,7 @@ export default class MainComponent extends React.Component {
           placeholder={'testme'} enabled
         />
         <br />
+
         <p>Disable Dragging</p>
         <KeyboardedInput
           value={this.state.value1}
@@ -70,6 +73,7 @@ export default class MainComponent extends React.Component {
           isDraggable={false}
         />
         <br />
+
         <p>Disable Uppercase</p>
         <KeyboardedInput
           value={this.state.value2}
@@ -78,6 +82,7 @@ export default class MainComponent extends React.Component {
           isFirstLetterUppercase={false}
         />
         <br />
+
         <p>Custom Mapping</p>
         <KeyboardedInput
           value={this.state.value3}
@@ -85,6 +90,8 @@ export default class MainComponent extends React.Component {
           defaultKeyboard={this.state.customMapping}
           enabled
         />
+        <br />
+
         <p>Field Type (Email)</p>
         <KeyboardedInput
           value={this.state.value4}
@@ -93,13 +100,17 @@ export default class MainComponent extends React.Component {
           enabled
           keyboardClassName="testme"
         />
+        <br />
+
         <p>Uppercase After Space (name entry)</p>
         <KeyboardedInput
           value={this.state.value5}
           onChange={(value) => { this.handleValue5Change(value); }}
           enabled
-          uppercaseAfterSpace={true}
+          uppercaseAfterSpace
         />
+        <br />
+
       </div>
     );
   }

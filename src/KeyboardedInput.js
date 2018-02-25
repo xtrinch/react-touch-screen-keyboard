@@ -56,7 +56,7 @@ class KeyboardedInput extends React.Component {
     const that = this;
     // Prevent blinking of the keyboard if opaque
     setTimeout(() => {
-      if (typeof(that.props.value) !== 'undefined') {
+      if (typeof (that.props.value) !== 'undefined') {
         that.input.focus();
         that.input.select();
         that.input.setSelectionRange(that.props.value.length, that.props.value.length);

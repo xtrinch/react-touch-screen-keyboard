@@ -159,8 +159,8 @@ export default class Keyboard extends PureComponent {
     const { inputNode, isFirstLetterUppercase, uppercaseAfterSpace, dataset } = this.props;
     return inputNode.type !== 'password' &&
       dataset.type !== 'email' &&
-      ((!inputNode.value.length && isFirstLetterUppercase) 
-      || (inputNode.value.length > 0 && inputNode.value[inputNode.value.length - 1] == ' ' && uppercaseAfterSpace));
+      ((!inputNode.value.length && isFirstLetterUppercase) || (inputNode.value.length > 0 &&
+        inputNode.value[inputNode.value.length - 1] === ' ' && uppercaseAfterSpace));
   }
 
   handleBackspaceClick() {
@@ -210,12 +210,12 @@ export default class Keyboard extends PureComponent {
     const symbolsKeyValue = this.getSymbolsKeyValue();
 
     return (
-      <Draggable 
+      <Draggable
         disabled={this.props.isDraggable === false}
-        defaultPosition={{x: 0, y: 0}}
+        defaultPosition={{ x: 0, y: 0 }}
       >
         <div
-          className={`keyboard keyboard-wrapper ${typeof(this.props.keyboardClassName) !== 'undefined' ? this.props.keyboardClassName : ''}`}
+          className={`keyboard keyboard-wrapper ${typeof (this.props.keyboardClassName) !== 'undefined' ? this.props.keyboardClassName : ''}`}
           style={{ opacity: `${typeof (this.props.opacity) !== 'undefined' ? this.props.opacity : 1}` }}
         >
           <div className="keyboard-row">
