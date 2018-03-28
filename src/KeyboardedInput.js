@@ -68,7 +68,12 @@ class KeyboardedInput extends React.Component {
   handleFocusLost() {
     const that = this;
     setTimeout(() => {
-      if (!document.activeElement.classList.contains('keyboard-button') && !document.activeElement.classList.contains('keyboard') && !document.activeElement.classList.contains('keyboard-row')) {
+      // console.error(document.activeElement.classList);
+      console.error(window.event);
+      if (!document.activeElement.classList.contains('keyboard-button')
+        && !document.activeElement.classList.contains('keyboard')
+        && !document.activeElement.classList.contains('keyboard-row')
+        && !document.activeElement.classList.contains('react-draggable-transparent-selection')) {
         that.setState({ ...that.state, showKeyboard: false });
       }
     }, 0);
