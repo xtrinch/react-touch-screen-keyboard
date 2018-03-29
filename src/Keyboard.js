@@ -72,7 +72,7 @@ export default class Keyboard extends PureComponent {
     }
 
     return this.state.uppercase ?
-      keysSet.map(keyRow => keyRow.map(key => key.toUpperCase()))
+      keysSet.map(keyRow => keyRow.map(key => isFinite(key) ? key : key.toUpperCase()))
       : keysSet;
   }
 
