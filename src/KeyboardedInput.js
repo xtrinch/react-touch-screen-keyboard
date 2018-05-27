@@ -6,6 +6,7 @@ import Keyboard from './Keyboard';
 class KeyboardedInput extends React.Component {
   static propTypes = {
     name: PropTypes.any,
+    containerClassName: PropTypes.any,
     inputClassName: PropTypes.any,
     keyboardClassName: PropTypes.any,
     placeholder: PropTypes.any,
@@ -80,7 +81,7 @@ class KeyboardedInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.containerClassName}>
         <input
           name={this.props.name}
           className={this.props.inputClassName}
