@@ -13,6 +13,7 @@ export default class MainComponent extends React.Component {
       value3: '',
       value4: '',
       value5: '',
+      value6: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -25,6 +26,7 @@ export default class MainComponent extends React.Component {
     this.handleValue3Change = this.handleValue3Change.bind(this);
     this.handleValue4Change = this.handleValue4Change.bind(this);
     this.handleValue5Change = this.handleValue5Change.bind(this);
+    this.handleValue6Change = this.handleValue6Change.bind(this);
   }
 
   handleValueChange(val) {
@@ -49,6 +51,10 @@ export default class MainComponent extends React.Component {
 
   handleValue5Change(val) {
     this.setState({ value5: val });
+  }
+
+  handleValue6Change(val) {
+    this.setState({ value6: val });
   }
 
   render() {
@@ -109,6 +115,18 @@ export default class MainComponent extends React.Component {
           enabled
           uppercaseAfterSpace
         />
+        <br />
+
+        <p>Custom container className </p>
+        <span>Can create inline inputs </span>
+        <KeyboardedInput
+          value={this.state.value6}
+          onChange={(value) => { this.handleValue6Change(value); }}
+          enabled
+          uppercaseAfterSpace
+          containerClassName={'custom-class'}
+        />
+        <span> for more flexibility building forms</span>
         <br />
 
       </div>
