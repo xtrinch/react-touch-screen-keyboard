@@ -90,6 +90,18 @@ export default Input;
 
 ```
 
+#### Managing focus programmatically
+
+The `focus()` function can be used to set the focus on the input field and show the keyboard. You can [access the component via its ref](https://reactjs.org/docs/refs-and-the-dom.html).
+
+For example, to automatically focus the element on render:
+
+```
+  <KeyboardedInput
+    ref={input => input && input.focus()}
+    ...
+```
+
 #### Running Local Example
 
     # NPM
