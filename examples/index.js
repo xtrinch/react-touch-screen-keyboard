@@ -14,6 +14,7 @@ export default class MainComponent extends React.Component {
       value4: '',
       value5: '',
       value6: '',
+      value7: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -27,6 +28,10 @@ export default class MainComponent extends React.Component {
     this.handleValue4Change = this.handleValue4Change.bind(this);
     this.handleValue5Change = this.handleValue5Change.bind(this);
     this.handleValue6Change = this.handleValue6Change.bind(this);
+    this.handleValue7Change = this.handleValue7Change.bind(this);
+    this.handleFocusButtonClicked = this.handleFocusButtonClicked.bind(this);
+
+    this.input7ref = null;
   }
 
   handleValueChange(val) {
@@ -55,6 +60,14 @@ export default class MainComponent extends React.Component {
 
   handleValue6Change(val) {
     this.setState({ value6: val });
+  }
+
+  handleValue7Change(val) {
+    this.setState({ value7: val });
+  }
+
+  handleFocusButtonClicked() {
+    this.input7ref.focus();
   }
 
   render() {
@@ -127,6 +140,16 @@ export default class MainComponent extends React.Component {
           containerClassName={'custom-class'}
         />
         <span> for more flexibility building forms</span>
+        <br />
+
+        <p>Programmatically Focus Input</p>
+        <KeyboardedInput
+          ref={(ref) => { this.input7ref = ref; }}
+          value={this.state.value7}
+          onChange={(value) => { this.handleValue7Change(value); }}
+          enabled
+        />
+        <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
         <br />
 
       </div>
