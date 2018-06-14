@@ -30,6 +30,7 @@ class KeyboardedInput extends React.Component {
 
   constructor(props) {
     super(props);
+    this.focus = this.focus.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleFocusLost = this.handleFocusLost.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -49,6 +50,10 @@ class KeyboardedInput extends React.Component {
     this.input.removeEventListener('input', this.handleChange);
   }
 
+  focus() {
+    this.input.focus();
+  }
+
   handleChange(event) {
     this.props.onChange(event.target.value);
   }
@@ -57,7 +62,7 @@ class KeyboardedInput extends React.Component {
     const that = this;
     // Prevent blinking of the keyboard if opaque
     setTimeout(() => {
-      if (typeof (that.props.value) !== 'undefined') {
+      if (that.input && typeof (that.props.value) !== 'undefined') {
         that.input.focus();
         that.input.select();
         that.input.setSelectionRange(that.props.value.length, that.props.value.length);
