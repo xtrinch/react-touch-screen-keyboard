@@ -69,7 +69,7 @@ export default class MainComponent extends React.Component {
   }
 
   handleValue8Change(val) {
-    this.setState({ value7: val });
+    this.setState({ value8: val });
   }
 
   handleFocusButtonClicked() {
@@ -157,7 +157,7 @@ export default class MainComponent extends React.Component {
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
 
-        <p>Hidden numeric row, hidden shift, hidden symbols</p>
+        <p>Hidden numeric row, hidden shift, hidden symbols, hidden spacebar</p>
         <KeyboardedInput
           ref={(ref) => { this.input8ref = ref; }}
           value={this.state.value8}
@@ -166,6 +166,7 @@ export default class MainComponent extends React.Component {
           showNumericRow={false}
           showShift={false}
           showSymbols={false}
+          showSpacebar={false}
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
         <br />

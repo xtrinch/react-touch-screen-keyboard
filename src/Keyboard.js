@@ -30,6 +30,7 @@ export default class Keyboard extends PureComponent {
     showNumericRow: PropTypes.bool,
     showShift: PropTypes.bool,
     showSymbols: PropTypes.bool,
+    showSpacebar: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -42,6 +43,7 @@ export default class Keyboard extends PureComponent {
     showNumericRow: true,
     showShift: true,
     showSymbols: true,
+    showSpacebar: true,
   };
 
   constructor(props) {
@@ -287,11 +289,13 @@ export default class Keyboard extends PureComponent {
                 onClick={this.handleDragKeyClick}
               />
               : null}
-            <KeyboardButton
-              value={' '}
-              classes="keyboard-space"
-              onClick={this.handleLetterButtonClick}
-            />
+            {this.props.showSpacebar ?
+              <KeyboardButton
+                value={' '}
+                classes="keyboard-space"
+                onClick={this.handleLetterButtonClick}
+              />
+              : null}
             {inputNode.dataset.type === 'email' ?
               <KeyboardButton
                 value={'.'}
