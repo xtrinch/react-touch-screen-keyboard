@@ -27,6 +27,7 @@ export default class Keyboard extends PureComponent {
     isDraggable: PropTypes.bool,
     dataset: PropTypes.any,
     keyboardClassName: PropTypes.any,
+    showNumericRow: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -36,6 +37,7 @@ export default class Keyboard extends PureComponent {
     isDraggable: true,
     defaultKeyboard: 'us',
     dataset: { type: 'input' },
+    showNumericRow: true,
   };
 
   constructor(props) {
@@ -218,20 +220,21 @@ export default class Keyboard extends PureComponent {
           className={`keyboard keyboard-wrapper ${typeof (this.props.keyboardClassName) !== 'undefined' ? this.props.keyboardClassName : ''}`}
           style={{ opacity: `${typeof (this.props.opacity) !== 'undefined' ? this.props.opacity : 1}` }}
         >
-          <div className="keyboard-row">
-            {numbers.map(button =>
+          {this.props.showNumericRow ?
+            <div className="keyboard-row">
+              {numbers.map(button =>
+                <KeyboardButton
+                  value={button}
+                  onClick={this.handleLetterButtonClick}
+                  classes={'keyboard-numberButton'}
+                  key={button}
+                />,
+              )}
               <KeyboardButton
-                value={button}
-                onClick={this.handleLetterButtonClick}
-                classes={'keyboard-numberButton'}
-                key={button}
-              />,
-            )}
-            <KeyboardButton
-              value={<BackspaceIcon />}
-              onClick={this.handleBackspaceClick}
-            />
-          </div>
+                value={<BackspaceIcon />}
+                onClick={this.handleBackspaceClick}
+              />
+            </div> : null}
 
           {keys.map((row, i) =>
             <div key={`r${i}`} className="keyboard-row">
