@@ -157,13 +157,14 @@ export default class MainComponent extends React.Component {
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
 
-        <p>Hidden numeric row</p>
+        <p>Hidden numeric row, hidden shift</p>
         <KeyboardedInput
           ref={(ref) => { this.input8ref = ref; }}
           value={this.state.value7}
           onChange={(value) => { this.handleValue8Change(value); }}
           enabled
           showNumericRow={false}
+          showShift={false}
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
         <br />

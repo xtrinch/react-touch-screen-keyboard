@@ -27,6 +27,7 @@ class KeyboardedInput extends React.Component {
     dataset: PropTypes.any,
     onChange: PropTypes.func,
     showNumericRow: PropTypes.bool,
+    showShift: PropTypes.bool,
   };
 
   constructor(props) {
@@ -122,6 +123,7 @@ class KeyboardedInput extends React.Component {
           uppercaseAfterSpace={this.props.uppercaseAfterSpace}
           keyboardClassName={this.props.keyboardClassName}
           showNumericRow={this.props.showNumericRow}
+          showShift={this.props.showShift}
         />
         }
       </div>

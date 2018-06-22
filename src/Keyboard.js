@@ -28,6 +28,7 @@ export default class Keyboard extends PureComponent {
     dataset: PropTypes.any,
     keyboardClassName: PropTypes.any,
     showNumericRow: PropTypes.bool,
+    showShift: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -38,6 +39,7 @@ export default class Keyboard extends PureComponent {
     defaultKeyboard: 'us',
     dataset: { type: 'input' },
     showNumericRow: true,
+    showShift: true,
   };
 
   constructor(props) {
@@ -238,7 +240,7 @@ export default class Keyboard extends PureComponent {
 
           {keys.map((row, i) =>
             <div key={`r${i}`} className="keyboard-row">
-              {keys.length === i + 1 &&
+              {keys.length === i + 1 && this.props.showShift &&
                 <KeyboardButton
                   classes="shift-symbols"
                   value={<ShiftIcon />}
