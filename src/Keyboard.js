@@ -8,6 +8,7 @@ import LatinLayout from './layouts/LatinLayout';
 import CyrillicLayout from './layouts/CyrillicLayout';
 import SymbolsLayout from './layouts/SymbolsLayout';
 import GermanLayout from './layouts/GermanLayout';
+import FrenchLayout from './layouts/FrenchLayout';
 
 import BackspaceIcon from './icons/BackspaceIcon';
 import LanguageIcon from './icons/LanguageIcon';
@@ -63,6 +64,8 @@ export default class Keyboard extends PureComponent {
       keysSet = LatinLayout;
     } else if (this.state.currentLanguage === 'de') {
       keysSet = GermanLayout;
+    } else if (this.state.currentLanguage === 'fr') {
+      keysSet = FrenchLayout;
     } else if (this.state.currentLanguage === 'ru') {
       keysSet = CyrillicLayout;
     } else if (this.state.currentLanguage) {
