@@ -18,6 +18,7 @@ class KeyboardedInput extends React.Component {
     pattern: PropTypes.any,
     readOnly: PropTypes.any,
     enabled: PropTypes.any,
+    required: PropTypes.bool,
     defaultKeyboard: PropTypes.any,
     secondaryKeyboard: PropTypes.any,
     opacity: PropTypes.any,
@@ -26,6 +27,8 @@ class KeyboardedInput extends React.Component {
     uppercaseAfterSpace: PropTypes.any,
     dataset: PropTypes.any,
     onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
     showNumericRow: PropTypes.bool,
     showShift: PropTypes.bool,
     showSymbols: PropTypes.bool,
@@ -39,6 +42,8 @@ class KeyboardedInput extends React.Component {
     this.handleFocusLost = this.handleFocusLost.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.hideKeyboard = this.hideKeyboard.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.handleOnFocus = this.handleOnFocus.bind(this);
 
     this.state = {
       showKeyboard: false,
@@ -62,6 +67,14 @@ class KeyboardedInput extends React.Component {
     this.props.onChange(event.target.value);
   }
 
+  handleOnBlur(value) {
+    this.props.onBlur(value);
+  }
+
+  handleOnFocus(value) {
+    this.props.onFocus(value);
+  }
+
   handleFocus() {
     const that = this;
     // Prevent blinking of the keyboard if opaque
@@ -70,6 +83,12 @@ class KeyboardedInput extends React.Component {
         that.input.focus();
         that.input.select();
         that.input.setSelectionRange(that.props.value.length, that.props.value.length);
+
+        // Only trigger on first focus
+        if (this.state.showKeyboard === false && that.props.onFocus) {
+          that.props.onFocus(that.props.value);
+        }
+
         that.setState({ ...this.state, showKeyboard: true });
       }
     }, 0);
@@ -82,12 +101,21 @@ class KeyboardedInput extends React.Component {
         && !document.activeElement.classList.contains('keyboard')
         && !document.activeElement.classList.contains('keyboard-row')
         && !document.activeElement.classList.contains('react-draggable-transparent-selection')) {
+
+        if (that.props.onBlur) {
+          that.props.onBlur(that.props.value);
+        }
+
         that.setState({ ...that.state, showKeyboard: false });
       }
     }, 0);
   }
 
   hideKeyboard() {
+    if (this.props.onBlur) {
+      this.props.onBlur(this.props.value);
+    }
+
     this.setState({ ...this.state, showKeyboard: false });
   }
 
@@ -98,6 +126,7 @@ class KeyboardedInput extends React.Component {
           name={this.props.name}
           className={this.props.inputClassName}
           placeholder={this.props.placeholder}
+          required={this.props.required}
           value={this.props.value}
           type={this.props.type}
           onFocus={this.handleFocus}

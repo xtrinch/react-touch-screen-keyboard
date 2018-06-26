@@ -8,7 +8,7 @@
 
 This library will render a draggable virtual keyboard on the bottom of the screen when the input is selected. The usage is very simple - instead of using the input tag, use the KeyboardedInput tag from the library. You can control the input's value via the callback function you give to its props.
 
-Currently supported keyboards: us, de, ru
+Currently supported keyboards: us, de, ru, fr
 
 **Installing via npm**
 
@@ -30,8 +30,11 @@ class Input extends React.Component {
     return (
       <KeyboardedInput
         enabled
+        required
         type={this.props.type}
         onChange={this.props.onChange}
+        onBlur={this.props.onBlur}
+        onFocus={this.props.onFocus}
         value={this.props.value}
         min={this.props.min}
         max={this.props.max}
@@ -58,8 +61,6 @@ export default Input;
 #### Use Custom Keyboard
 
 You can pass a Nx3 sized array into `defaultKeyboard` prop to render a customize layout.
-
-**Note:** The array must be 3 rows, however the size of the row's columns is not limited.
 
 ```js
 
