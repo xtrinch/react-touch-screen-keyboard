@@ -254,12 +254,26 @@ export default class Keyboard extends PureComponent {
                   onClick={this.handleShiftClick}
                 />
               }
-              {row.map((button, ii) =>
-                <KeyboardButton
-                  value={button}
-                  onClick={this.handleLetterButtonClick}
-                  key={`b${ii}`}
-                />,
+              {row.map((button, ii) => {
+                switch (button.toLowerCase()) {
+                  case 'bs':
+                    return (
+                      <KeyboardButton
+                        value={<BackspaceIcon />}
+                        onClick={this.handleBackspaceClick}
+                      />
+                    );
+
+                  default:
+                    return (
+                      <KeyboardButton
+                        value={button}
+                        onClick={this.handleLetterButtonClick}
+                        key={`b${ii}`}
+                      />
+                    );
+                }
+              }
               )}
 
               {keys.length === i + 1 && this.props.showSymbols &&
