@@ -28,6 +28,10 @@ export default class Keyboard extends PureComponent {
     isDraggable: PropTypes.bool,
     dataset: PropTypes.any,
     keyboardClassName: PropTypes.any,
+    showNumericRow: PropTypes.bool,
+    showShift: PropTypes.bool,
+    showSymbols: PropTypes.bool,
+    showSpacebar: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -37,6 +41,10 @@ export default class Keyboard extends PureComponent {
     isDraggable: true,
     defaultKeyboard: 'us',
     dataset: { type: 'input' },
+    showNumericRow: true,
+    showShift: true,
+    showSymbols: true,
+    showSpacebar: true,
   };
 
   constructor(props) {
@@ -221,24 +229,25 @@ export default class Keyboard extends PureComponent {
           className={`keyboard keyboard-wrapper ${typeof (this.props.keyboardClassName) !== 'undefined' ? this.props.keyboardClassName : ''}`}
           style={{ opacity: `${typeof (this.props.opacity) !== 'undefined' ? this.props.opacity : 1}` }}
         >
-          <div className="keyboard-row">
-            {numbers.map(button =>
+          {this.props.showNumericRow ?
+            <div className="keyboard-row">
+              {numbers.map(button =>
+                <KeyboardButton
+                  value={button}
+                  onClick={this.handleLetterButtonClick}
+                  classes={'keyboard-numberButton'}
+                  key={button}
+                />,
+              )}
               <KeyboardButton
-                value={button}
-                onClick={this.handleLetterButtonClick}
-                classes={'keyboard-numberButton'}
-                key={button}
-              />,
-            )}
-            <KeyboardButton
-              value={<BackspaceIcon />}
-              onClick={this.handleBackspaceClick}
-            />
-          </div>
+                value={<BackspaceIcon />}
+                onClick={this.handleBackspaceClick}
+              />
+            </div> : null}
 
           {keys.map((row, i) =>
             <div key={`r${i}`} className="keyboard-row">
-              {keys.length === i + 1 &&
+              {keys.length === i + 1 && this.props.showShift &&
                 <KeyboardButton
                   classes="shift-symbols"
                   value={<ShiftIcon />}
@@ -253,7 +262,7 @@ export default class Keyboard extends PureComponent {
                 />,
               )}
 
-              {keys.length === i + 1 &&
+              {keys.length === i + 1 && this.props.showSymbols &&
                 <KeyboardButton
                   classes="shift-symbols"
                   value={symbolsKeyValue}
@@ -283,11 +292,13 @@ export default class Keyboard extends PureComponent {
                 onClick={this.handleDragKeyClick}
               />
               : null}
-            <KeyboardButton
-              value={' '}
-              classes="keyboard-space"
-              onClick={this.handleLetterButtonClick}
-            />
+            {this.props.showSpacebar ?
+              <KeyboardButton
+                value={' '}
+                classes="keyboard-space"
+                onClick={this.handleLetterButtonClick}
+              />
+              : null}
             {inputNode.dataset.type === 'email' ?
               <KeyboardButton
                 value={'.'}

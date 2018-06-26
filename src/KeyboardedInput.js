@@ -26,6 +26,10 @@ class KeyboardedInput extends React.Component {
     uppercaseAfterSpace: PropTypes.any,
     dataset: PropTypes.any,
     onChange: PropTypes.func,
+    showNumericRow: PropTypes.bool,
+    showShift: PropTypes.bool,
+    showSymbols: PropTypes.bool,
+    showSpacebar: PropTypes.bool,
   };
 
   constructor(props) {
@@ -120,6 +124,10 @@ class KeyboardedInput extends React.Component {
           isFirstLetterUppercase={this.props.isFirstLetterUppercase}
           uppercaseAfterSpace={this.props.uppercaseAfterSpace}
           keyboardClassName={this.props.keyboardClassName}
+          showNumericRow={this.props.showNumericRow}
+          showShift={this.props.showShift}
+          showSymbols={this.props.showSymbols}
+          showSpacebar={this.props.showSpacebar}
         />
         }
       </div>

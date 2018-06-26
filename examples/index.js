@@ -15,6 +15,7 @@ export default class MainComponent extends React.Component {
       value5: '',
       value6: '',
       value7: '',
+      value8: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -29,6 +30,7 @@ export default class MainComponent extends React.Component {
     this.handleValue5Change = this.handleValue5Change.bind(this);
     this.handleValue6Change = this.handleValue6Change.bind(this);
     this.handleValue7Change = this.handleValue7Change.bind(this);
+    this.handleValue8Change = this.handleValue8Change.bind(this);
     this.handleFocusButtonClicked = this.handleFocusButtonClicked.bind(this);
 
     this.input7ref = null;
@@ -64,6 +66,10 @@ export default class MainComponent extends React.Component {
 
   handleValue7Change(val) {
     this.setState({ value7: val });
+  }
+
+  handleValue8Change(val) {
+    this.setState({ value8: val });
   }
 
   handleFocusButtonClicked() {
@@ -150,6 +156,20 @@ export default class MainComponent extends React.Component {
           enabled
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
+
+        <p>Hidden numeric row, hidden shift, hidden symbols, hidden spacebar</p>
+        <KeyboardedInput
+          ref={(ref) => { this.input8ref = ref; }}
+          value={this.state.value8}
+          onChange={(value) => { this.handleValue8Change(value); }}
+          enabled
+          showNumericRow={false}
+          showShift={false}
+          showSymbols={false}
+          showSpacebar={false}
+        />
+        <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
+        <br />
         <br />
 
       </div>
