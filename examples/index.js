@@ -16,6 +16,8 @@ export default class MainComponent extends React.Component {
       value6: '',
       value7: '',
       value8: '',
+      value9: '',
+      value10: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
@@ -31,7 +33,10 @@ export default class MainComponent extends React.Component {
     this.handleValue6Change = this.handleValue6Change.bind(this);
     this.handleValue7Change = this.handleValue7Change.bind(this);
     this.handleValue8Change = this.handleValue8Change.bind(this);
+    this.handleValue9Change = this.handleValue9Change.bind(this);
+    this.handleValue10Change = this.handleValue10Change.bind(this);
     this.handleFocusButtonClicked = this.handleFocusButtonClicked.bind(this);
+    this.handleOnFocus = this.handleOnFocus.bind(this);
 
     this.input7ref = null;
   }
@@ -72,8 +77,20 @@ export default class MainComponent extends React.Component {
     this.setState({ value8: val });
   }
 
+  handleValue9Change(val) {
+    this.setState({ value9: val });
+  }
+
+  handleValue10Change(val) {
+    this.setState({ value10: val });
+  }
+
   handleFocusButtonClicked() {
     this.input7ref.focus();
+  }
+
+  handleOnFocus(value) {
+    this.handleValue10Change('default value');
   }
 
   render() {
@@ -86,7 +103,9 @@ export default class MainComponent extends React.Component {
           value={this.state.value}
           onChange={(value) => { this.handleValueChange(value); }}
           opacity={0.8}
-          placeholder={'testme'} enabled
+          placeholder={'testme'}
+          required
+          enabled
         />
         <br />
 
@@ -156,10 +175,10 @@ export default class MainComponent extends React.Component {
           enabled
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
+        <br />
 
         <p>Hidden numeric row, hidden shift, hidden symbols, hidden spacebar</p>
         <KeyboardedInput
-          ref={(ref) => { this.input8ref = ref; }}
           value={this.state.value8}
           onChange={(value) => { this.handleValue8Change(value); }}
           enabled
@@ -168,8 +187,24 @@ export default class MainComponent extends React.Component {
           showSymbols={false}
           showSpacebar={false}
         />
-        <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
         <br />
+
+        <p>Callback (onBlur)</p>
+        <KeyboardedInput
+          value={this.state.value9}
+          onChange={(value) => { this.handleValue9Change(value); }}
+          onBlur={(value) => { alert(`Triggered Blur: ${value}`); }}
+          enabled
+        />
+        <br />
+
+        <p>Callback (onFocus)</p>
+        <KeyboardedInput
+          value={this.state.value10}
+          onChange={(value) => { this.handleValue10Change(value); }}
+          onFocus={(value) => { this.handleOnFocus(value); }}
+          enabled
+        />
         <br />
 
       </div>
