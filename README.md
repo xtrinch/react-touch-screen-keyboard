@@ -59,6 +59,13 @@ export default Input;
 
 You can pass a Nx3 sized array into `defaultKeyboard` prop to render a customize layout.
 
+You can place functional keys using the following placeholders:
+
+| Placeholder | Key |
+|---|---|
+| *sh | Shift |
+| *bs | Backspace |
+
 **Note:** The array must be 3 rows, however the size of the row's columns is not limited.
 
 ```js
