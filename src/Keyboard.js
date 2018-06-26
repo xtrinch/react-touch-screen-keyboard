@@ -256,11 +256,20 @@ export default class Keyboard extends PureComponent {
               }
               {row.map((button, ii) => {
                 switch (button.toLowerCase()) {
-                  case 'bs':
+                  case '*bs':
                     return (
                       <KeyboardButton
                         value={<BackspaceIcon />}
                         onClick={this.handleBackspaceClick}
+                      />
+                    );
+
+                  case '*sh':
+                    return (
+                      <KeyboardButton
+                        classes="shift-symbols"
+                        value={<ShiftIcon />}
+                        onClick={this.handleShiftClick}
                       />
                     );
 

@@ -18,8 +18,8 @@ export default class MainComponent extends React.Component {
       value8: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
-        ['z', 'x', 'c', 'v', 'b', 'n', 'm', '.com', 'bs'],
+        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@', '*sh'],
+        ['z', 'x', 'c', 'v', 'b', 'n', 'm', '.com', '*bs'],
       ],
     };
     this.handleValueChange = this.handleValueChange.bind(this);
