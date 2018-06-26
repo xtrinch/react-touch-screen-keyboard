@@ -81,7 +81,7 @@ class Input extends React.Component {
       ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@'],
       ['z', 'x', 'c', 'v', 'b', 'n', 'm', '.com']
     ];
-      
+
     return (
       <KeyboardedInput
         enabled
