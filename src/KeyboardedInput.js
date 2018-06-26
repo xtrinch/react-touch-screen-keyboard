@@ -78,8 +78,6 @@ class KeyboardedInput extends React.Component {
   handleFocusLost() {
     const that = this;
     setTimeout(() => {
-      // console.error(document.activeElement.classList);
-      console.error(window.event);
       if (!document.activeElement.classList.contains('keyboard-button')
         && !document.activeElement.classList.contains('keyboard')
         && !document.activeElement.classList.contains('keyboard-row')
