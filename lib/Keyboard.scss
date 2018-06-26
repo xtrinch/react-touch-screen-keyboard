@@ -1,0 +1,91 @@
+.keyboard {
+  width: 100%;
+  max-width: 1030px;
+  margin: 0 auto;
+  background: #dadada;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.5);
+}
+
+.keyboard-wrapper {
+  position:fixed;
+  bottom: 0;
+  z-index: 10000;
+  width: 700px;
+  left: calc(50% - 350px);
+
+  .keyboard-row {
+    display: flex;
+  }
+}
+
+.keyboard-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 100px;
+  font-size: 18px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #F5F5F5;
+  border: 1px solid #CECECE;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  &:active {
+    background-color: #cccccc;
+  }
+
+  &.shift-symbols {
+    flex-basis: 210px;
+  }
+
+  &.keyboard-numberButton {
+    flex-grow: 1;
+  }
+
+  &.keyboard-halfButton {
+    flex-basis: 56px;
+  }
+
+  &.keyboard-space {
+    flex-grow: 1;
+  }
+
+  // TODO Should be remove?
+  &.keyboard-utilButton {
+    flex-grow: 2;
+    max-width: 55px;
+  }
+
+  // TODO Should be remove?
+  &.keyboard-additionalButton {
+    flex-basis: 128px;
+  }
+
+  &.keyboard-submitButton, &.keyboard-submit-button {
+    flex-basis: 95px;
+    background-color: #63b324;
+    border-color: #63b324;
+    color: #ffffff;
+  }
+}
+
+// TODO Should be remove?
+.keyboard-keysSet {
+  display: flex;
+  flex-grow: 1;
+}
