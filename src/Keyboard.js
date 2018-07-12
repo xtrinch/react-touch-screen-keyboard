@@ -214,12 +214,12 @@ export default class Keyboard extends PureComponent {
     inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
-  getLetterClassName = (letter) => {
-    if (!letter || letter.length > 1) {
+  getCharacterClassName = (letter) => {
+    const char = `${letter}`;
+    if (letter.length > 1) {
       return '';
     }
-
-    return `keyboard-key-${letter.charCodeAt(0)}`;
+    return `keyboard-key-${char.charCodeAt(0)}`;
   }
 
   render() {
@@ -243,7 +243,7 @@ export default class Keyboard extends PureComponent {
                 <KeyboardButton
                   value={button}
                   onClick={this.handleLetterButtonClick}
-                  classes={'keyboard-numberButton'}
+                  classes={`keyboard-numberButton ${this.getCharacterClassName(button)}`}
                   key={button}
                 />,
               )}
@@ -289,7 +289,7 @@ export default class Keyboard extends PureComponent {
                     return (
                       <KeyboardButton
                         value={button}
-                        classes={this.getLetterClassName(button)}
+                        classes={this.getCharacterClassName(button)}
                         onClick={this.handleLetterButtonClick}
                         key={`b${ii}`}
                       />
