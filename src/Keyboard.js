@@ -240,6 +240,7 @@ export default class Keyboard extends PureComponent {
                 />,
               )}
               <KeyboardButton
+                classes="backspace-button"
                 value={<BackspaceIcon />}
                 onClick={this.handleBackspaceClick}
               />
@@ -259,6 +260,7 @@ export default class Keyboard extends PureComponent {
                   case '*bs':
                     return (
                       <KeyboardButton
+                        classes="backspace-button"
                         value={<BackspaceIcon />}
                         onClick={this.handleBackspaceClick}
                         key={`b${ii}`}
@@ -279,6 +281,7 @@ export default class Keyboard extends PureComponent {
                     return (
                       <KeyboardButton
                         value={button}
+                        classes="shift-symbols"
                         onClick={this.handleLetterButtonClick}
                         key={`b${ii}`}
                       />
