@@ -216,7 +216,7 @@ export default class Keyboard extends PureComponent {
 
   getCharacterClassName = (letter) => {
     const char = `${letter}`;
-    if (letter.length > 1) {
+    if (char.length > 1) {
       return '';
     }
     return `keyboard-key-${char.charCodeAt(0)}`;
