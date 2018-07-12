@@ -33,6 +33,7 @@ class KeyboardedInput extends React.Component {
     showShift: PropTypes.bool,
     showSymbols: PropTypes.bool,
     showSpacebar: PropTypes.bool,
+    showSubmit: PropTypes.bool,
   };
 
   constructor(props) {
@@ -155,6 +156,7 @@ class KeyboardedInput extends React.Component {
           showShift={this.props.showShift}
           showSymbols={this.props.showSymbols}
           showSpacebar={this.props.showSpacebar}
+          showSubmit={this.props.showSubmit}
         />
         }
       </div>
