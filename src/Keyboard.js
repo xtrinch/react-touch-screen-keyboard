@@ -313,7 +313,7 @@ export default class Keyboard extends PureComponent {
             {this.props.isDraggable !== false ?
               <KeyboardButton
                 value={<DraggableIcon />}
-                classes=""
+                classes="keyboard-draggable-button"
                 onClick={this.handleDragKeyClick}
               />
               : null}
