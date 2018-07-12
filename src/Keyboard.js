@@ -214,6 +214,14 @@ export default class Keyboard extends PureComponent {
     inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
+  getLetterClassName = (letter) => {
+    if (!letter || letter.length > 1) {
+      return '';
+    }
+
+    return `keyboard-key-${letter.charCodeAt(0)}`;
+  }
+
   render() {
     const { inputNode, secondaryKeyboard } = this.props;
     const keys = this.getKeys();
@@ -281,7 +289,7 @@ export default class Keyboard extends PureComponent {
                     return (
                       <KeyboardButton
                         value={button}
-                        classes="shift-symbols"
+                        classes={this.getLetterClassName(button)}
                         onClick={this.handleLetterButtonClick}
                         key={`b${ii}`}
                       />
