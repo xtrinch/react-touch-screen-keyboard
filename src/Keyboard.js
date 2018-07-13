@@ -216,6 +216,14 @@ export default class Keyboard extends PureComponent {
     inputNode.dispatchEvent(new CustomEvent('input'));
   }
 
+  getCharacterClassName = (letter) => {
+    const char = `${letter}`;
+    if (char.length > 1) {
+      return '';
+    }
+    return `keyboard-key-${char.charCodeAt(0)}`;
+  }
+
   render() {
     const { inputNode, secondaryKeyboard } = this.props;
     const keys = this.getKeys();
@@ -237,11 +245,12 @@ export default class Keyboard extends PureComponent {
                 <KeyboardButton
                   value={button}
                   onClick={this.handleLetterButtonClick}
-                  classes={'keyboard-numberButton'}
+                  classes={`keyboard-numberButton ${this.getCharacterClassName(button)}`}
                   key={button}
                 />,
               )}
               <KeyboardButton
+                classes="backspace-button"
                 value={<BackspaceIcon />}
                 onClick={this.handleBackspaceClick}
               />
@@ -261,6 +270,7 @@ export default class Keyboard extends PureComponent {
                   case '*bs':
                     return (
                       <KeyboardButton
+                        classes="backspace-button"
                         value={<BackspaceIcon />}
                         onClick={this.handleBackspaceClick}
                         key={`b${ii}`}
@@ -281,6 +291,7 @@ export default class Keyboard extends PureComponent {
                     return (
                       <KeyboardButton
                         value={button}
+                        classes={this.getCharacterClassName(button)}
                         onClick={this.handleLetterButtonClick}
                         key={`b${ii}`}
                       />
@@ -315,7 +326,7 @@ export default class Keyboard extends PureComponent {
             {this.props.isDraggable !== false ?
               <KeyboardButton
                 value={<DraggableIcon />}
-                classes=""
+                classes="keyboard-draggable-button"
                 onClick={this.handleDragKeyClick}
               />
               : null}
