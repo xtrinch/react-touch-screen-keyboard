@@ -18,6 +18,7 @@ export default class MainComponent extends React.Component {
       value8: '',
       value9: '',
       value10: '',
+      value11: '',
       customMapping: [
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '@', '*sh'],
@@ -85,6 +86,9 @@ export default class MainComponent extends React.Component {
     this.setState({ value10: val });
   }
 
+  handleValue11Change = (val) => {
+    this.setState(_ => ({ value11: val }));
+  };
   handleFocusButtonClicked() {
     this.input7ref.focus();
   }
@@ -101,7 +105,9 @@ export default class MainComponent extends React.Component {
         <p>Standard</p>
         <KeyboardedInput
           value={this.state.value}
-          onChange={(value) => { this.handleValueChange(value); }}
+          onChange={value => {
+            this.handleValueChange(value);
+          }}
           opacity={0.8}
           placeholder={'testme'}
           required
@@ -111,17 +117,32 @@ export default class MainComponent extends React.Component {
 
         <p>Disable Dragging</p>
         <KeyboardedInput
-          value={this.state.value1}
-          onChange={(value) => { this.handleValue1Change(value); }}
+          value={this.state.value11}
+          onChange={value => {
+            this.handleValue11Change(value);
+          }}
           enabled
           isDraggable={false}
+        />
+        <br />
+
+        <p>Disable Submit</p>
+        <KeyboardedInput
+          value={this.state.value1}
+          onChange={value => {
+            this.handleValue1Change(value);
+          }}
+          enabled
+          showSubmit={false}
         />
         <br />
 
         <p>Disable Uppercase</p>
         <KeyboardedInput
           value={this.state.value2}
-          onChange={(value) => { this.handleValue2Change(value); }}
+          onChange={value => {
+            this.handleValue2Change(value);
+          }}
           enabled
           isFirstLetterUppercase={false}
         />
@@ -130,7 +151,9 @@ export default class MainComponent extends React.Component {
         <p>Custom Mapping</p>
         <KeyboardedInput
           value={this.state.value3}
-          onChange={(value) => { this.handleValue3Change(value); }}
+          onChange={value => {
+            this.handleValue3Change(value);
+          }}
           defaultKeyboard={this.state.customMapping}
           enabled
         />
@@ -140,7 +163,9 @@ export default class MainComponent extends React.Component {
         <KeyboardedInput
           value={this.state.value4}
           dataset={{ type: 'email' }}
-          onChange={(value) => { this.handleValue4Change(value); }}
+          onChange={value => {
+            this.handleValue4Change(value);
+          }}
           enabled
           keyboardClassName="testme"
         />
@@ -149,7 +174,9 @@ export default class MainComponent extends React.Component {
         <p>Uppercase After Space (name entry)</p>
         <KeyboardedInput
           value={this.state.value5}
-          onChange={(value) => { this.handleValue5Change(value); }}
+          onChange={value => {
+            this.handleValue5Change(value);
+          }}
           enabled
           uppercaseAfterSpace
         />
@@ -159,7 +186,9 @@ export default class MainComponent extends React.Component {
         <span>Can create inline inputs </span>
         <KeyboardedInput
           value={this.state.value6}
-          onChange={(value) => { this.handleValue6Change(value); }}
+          onChange={value => {
+            this.handleValue6Change(value);
+          }}
           enabled
           uppercaseAfterSpace
           containerClassName={'custom-class'}
@@ -169,9 +198,13 @@ export default class MainComponent extends React.Component {
 
         <p>Programmatically Focus Input</p>
         <KeyboardedInput
-          ref={(ref) => { this.input7ref = ref; }}
+          ref={ref => {
+            this.input7ref = ref;
+          }}
           value={this.state.value7}
-          onChange={(value) => { this.handleValue7Change(value); }}
+          onChange={value => {
+            this.handleValue7Change(value);
+          }}
           enabled
         />
         <button onClick={this.handleFocusButtonClicked}>Click To Focus</button>
@@ -180,7 +213,9 @@ export default class MainComponent extends React.Component {
         <p>Hidden numeric row, hidden shift, hidden symbols, hidden spacebar</p>
         <KeyboardedInput
           value={this.state.value8}
-          onChange={(value) => { this.handleValue8Change(value); }}
+          onChange={value => {
+            this.handleValue8Change(value);
+          }}
           enabled
           showNumericRow={false}
           showShift={false}
@@ -192,8 +227,12 @@ export default class MainComponent extends React.Component {
         <p>Callback (onBlur)</p>
         <KeyboardedInput
           value={this.state.value9}
-          onChange={(value) => { this.handleValue9Change(value); }}
-          onBlur={(value) => { alert(`Triggered Blur: ${value}`); }}
+          onChange={value => {
+            this.handleValue9Change(value);
+          }}
+          onBlur={value => {
+            alert(`Triggered Blur: ${value}`);
+          }}
           enabled
         />
         <br />
@@ -201,18 +240,18 @@ export default class MainComponent extends React.Component {
         <p>Callback (onFocus)</p>
         <KeyboardedInput
           value={this.state.value10}
-          onChange={(value) => { this.handleValue10Change(value); }}
-          onFocus={(value) => { this.handleOnFocus(value); }}
+          onChange={value => {
+            this.handleValue10Change(value);
+          }}
+          onFocus={value => {
+            this.handleOnFocus(value);
+          }}
           enabled
         />
         <br />
-
       </div>
     );
   }
 }
 
-ReactDom.render(
-  <MainComponent />,
-  document.getElementById('app'),
-);
+ReactDom.render(<MainComponent />, document.getElementById('app'));

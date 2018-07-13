@@ -32,6 +32,7 @@ export default class Keyboard extends PureComponent {
     showShift: PropTypes.bool,
     showSymbols: PropTypes.bool,
     showSpacebar: PropTypes.bool,
+    showSubmit: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -45,6 +46,7 @@ export default class Keyboard extends PureComponent {
     showShift: true,
     showSymbols: true,
     showSpacebar: true,
+    showSubmit: true,
   };
 
   constructor(props) {
@@ -330,11 +332,13 @@ export default class Keyboard extends PureComponent {
                 onClick={this.handleLetterButtonClick}
               />
               : null}
-            <KeyboardButton
-              value={String.fromCharCode('8615')}
-              classes="keyboard-submit-button"
-              onClick={this.props.hideKeyboard}
-            />
+            {this.props.showSubmit ?
+              <KeyboardButton
+                value={String.fromCharCode('8615')}
+                classes="keyboard-submit-button"
+                onClick={this.props.hideKeyboard}
+              />
+            : null}
           </div>
         </div>
       </Draggable>
