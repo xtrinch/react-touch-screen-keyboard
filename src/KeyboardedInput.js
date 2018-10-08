@@ -123,6 +123,7 @@ class KeyboardedInput extends React.Component {
   render() {
     return [
       <input
+        key={'_input'}
         name={this.props.name}
         className={this.props.inputClassName}
         placeholder={this.props.placeholder}
@@ -139,7 +140,7 @@ class KeyboardedInput extends React.Component {
         readOnly={this.props.readOnly === true}
         ref={(e) => { this.input = e; }}
       />,
-      <div className={this.props.containerClassName}>
+      <div key={'_container'} className={this.props.containerClassName}>
         {this.state.showKeyboard && this.props.enabled && this.props.readOnly !== true &&
         <Keyboard
           hideKeyboard={this.hideKeyboard}
