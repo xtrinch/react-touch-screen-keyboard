@@ -121,25 +121,26 @@ class KeyboardedInput extends React.Component {
   }
 
   render() {
-    return (
-      <div className={this.props.containerClassName}>
-        <input
-          name={this.props.name}
-          className={this.props.inputClassName}
-          placeholder={this.props.placeholder}
-          required={this.props.required}
-          value={this.props.value}
-          type={this.props.type}
-          onFocus={this.handleFocus}
-          onBlur={this.handleFocusLost}
-          min={this.props.min}
-          max={this.props.max}
-          step={this.props.step}
-          pattern={this.props.pattern}
-          onChange={this.handleChange}
-          readOnly={this.props.readOnly === true}
-          ref={(e) => { this.input = e; }}
-        />
+    return [
+      <input
+        key={'_input'}
+        name={this.props.name}
+        className={this.props.inputClassName}
+        placeholder={this.props.placeholder}
+        required={this.props.required}
+        value={this.props.value}
+        type={this.props.type}
+        onFocus={this.handleFocus}
+        onBlur={this.handleFocusLost}
+        min={this.props.min}
+        max={this.props.max}
+        step={this.props.step}
+        pattern={this.props.pattern}
+        onChange={this.handleChange}
+        readOnly={this.props.readOnly === true}
+        ref={(e) => { this.input = e; }}
+      />,
+      <div key={'_container'} className={this.props.containerClassName}>
         {this.state.showKeyboard && this.props.enabled && this.props.readOnly !== true &&
         <Keyboard
           hideKeyboard={this.hideKeyboard}
@@ -159,8 +160,8 @@ class KeyboardedInput extends React.Component {
           showSubmit={this.props.showSubmit}
         />
         }
-      </div>
-    );
+      </div>,
+    ];
   }
 }
 

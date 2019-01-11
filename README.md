@@ -16,6 +16,12 @@ Currently supported keyboards: us, de, ru, fr
 npm install react-touch-screen-keyboard
 ```
 
+**Installing via npm (React v15)**
+
+```
+npm install react-touch-screen-keyboard@0.3.15
+```
+
 ### Example
 
 ```js
