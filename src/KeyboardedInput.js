@@ -65,7 +65,7 @@ class KeyboardedInput extends React.Component {
   }
 
   handleChange(event) {
-    this.props.onChange(event.target.value);
+    this.props.onChange(event.target.value, event.target.name);
   }
 
   handleOnBlur(value) {
